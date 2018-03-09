@@ -14,7 +14,9 @@ target 'HenriPotier' do
 
   target 'HenriPotierTests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'OHHTTPStubs/Swift'
+    pod 'Quick'
+    pod 'Nimble'
   end
 
   target 'HenriPotierUITests' do
