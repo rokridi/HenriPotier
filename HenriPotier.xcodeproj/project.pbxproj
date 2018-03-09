@@ -1,0 +1,782 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E4614D1205275A000B03360 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4614D0205275A000B03360 /* AppDelegate.swift */; };
+		1E4614D3205275A000B03360 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4614D2205275A000B03360 /* ViewController.swift */; };
+		1E4614D6205275A000B03360 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E4614D4205275A000B03360 /* Main.storyboard */; };
+		1E4614D8205275A000B03360 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E4614D7205275A000B03360 /* Assets.xcassets */; };
+		1E4614DB205275A000B03360 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E4614D9205275A000B03360 /* LaunchScreen.storyboard */; };
+		1E4614E6205275A000B03360 /* HenriPotierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4614E5205275A000B03360 /* HenriPotierTests.swift */; };
+		1E4614F1205275A000B03360 /* HenriPotierUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4614F0205275A000B03360 /* HenriPotierUITests.swift */; };
+		66D543D5343423F138CB0981 /* Pods_HenriPotier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15B6955AC7F15A108C5D036 /* Pods_HenriPotier.framework */; };
+		806192BAA173884724E61C17 /* Pods_HenriPotierUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7841CDA82B2FB1D1BF9EA4 /* Pods_HenriPotierUITests.framework */; };
+		8F3C849417E0887A567797DA /* Pods_HenriPotierTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2D9E267E983A7A19BD46991 /* Pods_HenriPotierTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1E4614E2205275A000B03360 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E4614C5205275A000B03360 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E4614CC205275A000B03360;
+			remoteInfo = HenriPotier;
+		};
+		1E4614ED205275A000B03360 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E4614C5205275A000B03360 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E4614CC205275A000B03360;
+			remoteInfo = HenriPotier;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		16B386C543291E7A91A9F5C1 /* Pods-HenriPotierTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotierTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotierTests/Pods-HenriPotierTests.release.xcconfig"; sourceTree = "<group>"; };
+		1E4614CD205275A000B03360 /* HenriPotier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HenriPotier.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E4614D0205275A000B03360 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1E4614D2205275A000B03360 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1E4614D5205275A000B03360 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1E4614D7205275A000B03360 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1E4614DA205275A000B03360 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1E4614DC205275A000B03360 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E4614E1205275A000B03360 /* HenriPotierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HenriPotierTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E4614E5205275A000B03360 /* HenriPotierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HenriPotierTests.swift; sourceTree = "<group>"; };
+		1E4614E7205275A000B03360 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E4614EC205275A000B03360 /* HenriPotierUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HenriPotierUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E4614F0205275A000B03360 /* HenriPotierUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HenriPotierUITests.swift; sourceTree = "<group>"; };
+		1E4614F2205275A000B03360 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5494984B4EDE675710CB96DA /* Pods-HenriPotier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotier.release.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotier/Pods-HenriPotier.release.xcconfig"; sourceTree = "<group>"; };
+		7A7841CDA82B2FB1D1BF9EA4 /* Pods_HenriPotierUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HenriPotierUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2D9E267E983A7A19BD46991 /* Pods_HenriPotierTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HenriPotierTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A486E2B39E3DD6D962F59766 /* Pods-HenriPotierUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotierUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotierUITests/Pods-HenriPotierUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CA8EFFC429E06507806CDBDD /* Pods-HenriPotierUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotierUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotierUITests/Pods-HenriPotierUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F15B6955AC7F15A108C5D036 /* Pods_HenriPotier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HenriPotier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F52522A734B0A668900351EF /* Pods-HenriPotierTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotierTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotierTests/Pods-HenriPotierTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FED0202CB7E8BEC252C822C7 /* Pods-HenriPotier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotier/Pods-HenriPotier.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1E4614CA205275A000B03360 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66D543D5343423F138CB0981 /* Pods_HenriPotier.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E4614DE205275A000B03360 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F3C849417E0887A567797DA /* Pods_HenriPotierTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E4614E9205275A000B03360 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				806192BAA173884724E61C17 /* Pods_HenriPotierUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E4614C4205275A000B03360 = {
+			isa = PBXGroup;
+			children = (
+				1E4614CF205275A000B03360 /* HenriPotier */,
+				1E4614E4205275A000B03360 /* HenriPotierTests */,
+				1E4614EF205275A000B03360 /* HenriPotierUITests */,
+				1E4614CE205275A000B03360 /* Products */,
+				4C32A767544F6F9AB8E3D691 /* Pods */,
+				7E14F23B47DF1E6FBD49E706 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1E4614CE205275A000B03360 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1E4614CD205275A000B03360 /* HenriPotier.app */,
+				1E4614E1205275A000B03360 /* HenriPotierTests.xctest */,
+				1E4614EC205275A000B03360 /* HenriPotierUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1E4614CF205275A000B03360 /* HenriPotier */ = {
+			isa = PBXGroup;
+			children = (
+				1E4614D0205275A000B03360 /* AppDelegate.swift */,
+				1E4614D2205275A000B03360 /* ViewController.swift */,
+				1E4614D4205275A000B03360 /* Main.storyboard */,
+				1E4614D7205275A000B03360 /* Assets.xcassets */,
+				1E4614D9205275A000B03360 /* LaunchScreen.storyboard */,
+				1E4614DC205275A000B03360 /* Info.plist */,
+			);
+			path = HenriPotier;
+			sourceTree = "<group>";
+		};
+		1E4614E4205275A000B03360 /* HenriPotierTests */ = {
+			isa = PBXGroup;
+			children = (
+				1E4614E5205275A000B03360 /* HenriPotierTests.swift */,
+				1E4614E7205275A000B03360 /* Info.plist */,
+			);
+			path = HenriPotierTests;
+			sourceTree = "<group>";
+		};
+		1E4614EF205275A000B03360 /* HenriPotierUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1E4614F0205275A000B03360 /* HenriPotierUITests.swift */,
+				1E4614F2205275A000B03360 /* Info.plist */,
+			);
+			path = HenriPotierUITests;
+			sourceTree = "<group>";
+		};
+		4C32A767544F6F9AB8E3D691 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FED0202CB7E8BEC252C822C7 /* Pods-HenriPotier.debug.xcconfig */,
+				5494984B4EDE675710CB96DA /* Pods-HenriPotier.release.xcconfig */,
+				F52522A734B0A668900351EF /* Pods-HenriPotierTests.debug.xcconfig */,
+				16B386C543291E7A91A9F5C1 /* Pods-HenriPotierTests.release.xcconfig */,
+				CA8EFFC429E06507806CDBDD /* Pods-HenriPotierUITests.debug.xcconfig */,
+				A486E2B39E3DD6D962F59766 /* Pods-HenriPotierUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7E14F23B47DF1E6FBD49E706 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F15B6955AC7F15A108C5D036 /* Pods_HenriPotier.framework */,
+				A2D9E267E983A7A19BD46991 /* Pods_HenriPotierTests.framework */,
+				7A7841CDA82B2FB1D1BF9EA4 /* Pods_HenriPotierUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1E4614CC205275A000B03360 /* HenriPotier */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E4614F5205275A000B03360 /* Build configuration list for PBXNativeTarget "HenriPotier" */;
+			buildPhases = (
+				F5507DB5D28888CC0C9D59DB /* [CP] Check Pods Manifest.lock */,
+				1E4614C9205275A000B03360 /* Sources */,
+				1E4614CA205275A000B03360 /* Frameworks */,
+				1E4614CB205275A000B03360 /* Resources */,
+				6D8AF8E719ABAA061CD4D9B0 /* [CP] Embed Pods Frameworks */,
+				1D1D51EA6E73B44B08595C0E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HenriPotier;
+			productName = HenriPotier;
+			productReference = 1E4614CD205275A000B03360 /* HenriPotier.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1E4614E0205275A000B03360 /* HenriPotierTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E4614F8205275A000B03360 /* Build configuration list for PBXNativeTarget "HenriPotierTests" */;
+			buildPhases = (
+				D4F124F283A3D9AD3D56DEEF /* [CP] Check Pods Manifest.lock */,
+				1E4614DD205275A000B03360 /* Sources */,
+				1E4614DE205275A000B03360 /* Frameworks */,
+				1E4614DF205275A000B03360 /* Resources */,
+				81964A9C989E0854EF6D79BE /* [CP] Embed Pods Frameworks */,
+				73F107CE259C3E95D973AF8C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E4614E3205275A000B03360 /* PBXTargetDependency */,
+			);
+			name = HenriPotierTests;
+			productName = HenriPotierTests;
+			productReference = 1E4614E1205275A000B03360 /* HenriPotierTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1E4614EB205275A000B03360 /* HenriPotierUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E4614FB205275A000B03360 /* Build configuration list for PBXNativeTarget "HenriPotierUITests" */;
+			buildPhases = (
+				697A2B06F8DF4B0C490C8474 /* [CP] Check Pods Manifest.lock */,
+				1E4614E8205275A000B03360 /* Sources */,
+				1E4614E9205275A000B03360 /* Frameworks */,
+				1E4614EA205275A000B03360 /* Resources */,
+				6ACFBA0092F54A0487A986F4 /* [CP] Embed Pods Frameworks */,
+				A0DD772D8B4B2BC9DEB4B7D1 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E4614EE205275A000B03360 /* PBXTargetDependency */,
+			);
+			name = HenriPotierUITests;
+			productName = HenriPotierUITests;
+			productReference = 1E4614EC205275A000B03360 /* HenriPotierUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1E4614C5205275A000B03360 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = Rokridi;
+				TargetAttributes = {
+					1E4614CC205275A000B03360 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					1E4614E0205275A000B03360 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1E4614CC205275A000B03360;
+					};
+					1E4614EB205275A000B03360 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1E4614CC205275A000B03360;
+					};
+				};
+			};
+			buildConfigurationList = 1E4614C8205275A000B03360 /* Build configuration list for PBXProject "HenriPotier" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1E4614C4205275A000B03360;
+			productRefGroup = 1E4614CE205275A000B03360 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1E4614CC205275A000B03360 /* HenriPotier */,
+				1E4614E0205275A000B03360 /* HenriPotierTests */,
+				1E4614EB205275A000B03360 /* HenriPotierUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1E4614CB205275A000B03360 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E4614DB205275A000B03360 /* LaunchScreen.storyboard in Resources */,
+				1E4614D8205275A000B03360 /* Assets.xcassets in Resources */,
+				1E4614D6205275A000B03360 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E4614DF205275A000B03360 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E4614EA205275A000B03360 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D1D51EA6E73B44B08595C0E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HenriPotier/Pods-HenriPotier-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		697A2B06F8DF4B0C490C8474 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HenriPotierUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6ACFBA0092F54A0487A986F4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HenriPotierUITests/Pods-HenriPotierUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D8AF8E719ABAA061CD4D9B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HenriPotier/Pods-HenriPotier-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/HenriPotierApiClient/HenriPotierApiClient.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Whisper/Whisper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HenriPotierApiClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Whisper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HenriPotier/Pods-HenriPotier-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73F107CE259C3E95D973AF8C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HenriPotierTests/Pods-HenriPotierTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81964A9C989E0854EF6D79BE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HenriPotierTests/Pods-HenriPotierTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0DD772D8B4B2BC9DEB4B7D1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HenriPotierUITests/Pods-HenriPotierUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4F124F283A3D9AD3D56DEEF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HenriPotierTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5507DB5D28888CC0C9D59DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HenriPotier-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1E4614C9205275A000B03360 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E4614D3205275A000B03360 /* ViewController.swift in Sources */,
+				1E4614D1205275A000B03360 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E4614DD205275A000B03360 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E4614E6205275A000B03360 /* HenriPotierTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E4614E8205275A000B03360 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E4614F1205275A000B03360 /* HenriPotierUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1E4614E3205275A000B03360 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E4614CC205275A000B03360 /* HenriPotier */;
+			targetProxy = 1E4614E2205275A000B03360 /* PBXContainerItemProxy */;
+		};
+		1E4614EE205275A000B03360 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E4614CC205275A000B03360 /* HenriPotier */;
+			targetProxy = 1E4614ED205275A000B03360 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1E4614D4205275A000B03360 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E4614D5205275A000B03360 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1E4614D9205275A000B03360 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E4614DA205275A000B03360 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1E4614F3205275A000B03360 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1E4614F4205275A000B03360 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1E4614F6205275A000B03360 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FED0202CB7E8BEC252C822C7 /* Pods-HenriPotier.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89Q8W4SDG5;
+				INFOPLIST_FILE = HenriPotier/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rokridi.HenriPotier;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1E4614F7205275A000B03360 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5494984B4EDE675710CB96DA /* Pods-HenriPotier.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89Q8W4SDG5;
+				INFOPLIST_FILE = HenriPotier/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rokridi.HenriPotier;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1E4614F9205275A000B03360 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F52522A734B0A668900351EF /* Pods-HenriPotierTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89Q8W4SDG5;
+				INFOPLIST_FILE = HenriPotierTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rokridi.HenriPotierTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HenriPotier.app/HenriPotier";
+			};
+			name = Debug;
+		};
+		1E4614FA205275A000B03360 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16B386C543291E7A91A9F5C1 /* Pods-HenriPotierTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89Q8W4SDG5;
+				INFOPLIST_FILE = HenriPotierTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rokridi.HenriPotierTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HenriPotier.app/HenriPotier";
+			};
+			name = Release;
+		};
+		1E4614FC205275A000B03360 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA8EFFC429E06507806CDBDD /* Pods-HenriPotierUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89Q8W4SDG5;
+				INFOPLIST_FILE = HenriPotierUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rokridi.HenriPotierUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HenriPotier;
+			};
+			name = Debug;
+		};
+		1E4614FD205275A000B03360 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A486E2B39E3DD6D962F59766 /* Pods-HenriPotierUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89Q8W4SDG5;
+				INFOPLIST_FILE = HenriPotierUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rokridi.HenriPotierUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HenriPotier;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1E4614C8205275A000B03360 /* Build configuration list for PBXProject "HenriPotier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E4614F3205275A000B03360 /* Debug */,
+				1E4614F4205275A000B03360 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E4614F5205275A000B03360 /* Build configuration list for PBXNativeTarget "HenriPotier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E4614F6205275A000B03360 /* Debug */,
+				1E4614F7205275A000B03360 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E4614F8205275A000B03360 /* Build configuration list for PBXNativeTarget "HenriPotierTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E4614F9205275A000B03360 /* Debug */,
+				1E4614FA205275A000B03360 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E4614FB205275A000B03360 /* Build configuration list for PBXNativeTarget "HenriPotierUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E4614FC205275A000B03360 /* Debug */,
+				1E4614FD205275A000B03360 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1E4614C5205275A000B03360 /* Project object */;
+}
