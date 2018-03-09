@@ -13,6 +13,7 @@ struct HPBook: HPBookRepresentable {
     var isbn: String = ""
     var title: String = ""
     var price: Int = 0
+    var cover: String = ""
     var synopsis: [String] = []
     
     init() {}
@@ -20,10 +21,11 @@ struct HPBook: HPBookRepresentable {
 
 extension HPBook {
     
-    init(isbn: String, title: String, price: Int, synopsis: [String]) {
+    init(isbn: String, title: String, price: Int, cover: String, synopsis: [String]) {
         self.isbn = isbn
         self.title = title
         self.price = price
+        self.cover = cover
         self.synopsis = synopsis
     }
 }

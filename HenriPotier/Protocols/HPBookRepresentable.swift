@@ -19,9 +19,12 @@ protocol HPBookRepresentable {
     /// Price of the book.
     var price: Int {get set}
     
+    /// URL of the cover of the book.
+    var cover: String {get set}
+    
     /// Synopsis of the book.
     var synopsis: [String] {get set}
     
     init()
-    init(isbn: String, title: String, price: Int, synopsis: [String])
+    init(isbn: String, title: String, price: Int, cover: String, synopsis: [String])
 }

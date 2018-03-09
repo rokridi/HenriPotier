@@ -25,6 +25,9 @@
 		1E46152A2052D1FC00B03360 /* books.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E4615202052D1FC00B03360 /* books.json */; };
 		1E46152B2052D1FC00B03360 /* invalid_books.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E4615212052D1FC00B03360 /* invalid_books.json */; };
 		1E46152D2052D2DF00B03360 /* HenriPotierApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E46152C2052D2DF00B03360 /* HenriPotierApiClientTests.swift */; };
+		1E4615302052E0F300B03360 /* BookViewModelRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E46152F2052E0F300B03360 /* BookViewModelRepresentable.swift */; };
+		1E4615322052E1C800B03360 /* HPBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4615312052E1C800B03360 /* HPBookViewModel.swift */; };
+		1E4615342052E78200B03360 /* ModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4615332052E78200B03360 /* ModelsTests.swift */; };
 		66D543D5343423F138CB0981 /* Pods_HenriPotier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15B6955AC7F15A108C5D036 /* Pods_HenriPotier.framework */; };
 		806192BAA173884724E61C17 /* Pods_HenriPotierUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7841CDA82B2FB1D1BF9EA4 /* Pods_HenriPotierUITests.framework */; };
 		8F3C849417E0887A567797DA /* Pods_HenriPotierTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2D9E267E983A7A19BD46991 /* Pods_HenriPotierTests.framework */; };
@@ -73,6 +76,9 @@
 		1E4615202052D1FC00B03360 /* books.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = books.json; sourceTree = "<group>"; };
 		1E4615212052D1FC00B03360 /* invalid_books.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = invalid_books.json; sourceTree = "<group>"; };
 		1E46152C2052D2DF00B03360 /* HenriPotierApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HenriPotierApiClientTests.swift; sourceTree = "<group>"; };
+		1E46152F2052E0F300B03360 /* BookViewModelRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModelRepresentable.swift; sourceTree = "<group>"; };
+		1E4615312052E1C800B03360 /* HPBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPBookViewModel.swift; sourceTree = "<group>"; };
+		1E4615332052E78200B03360 /* ModelsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsTests.swift; sourceTree = "<group>"; };
 		5494984B4EDE675710CB96DA /* Pods-HenriPotier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotier.release.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotier/Pods-HenriPotier.release.xcconfig"; sourceTree = "<group>"; };
 		7A7841CDA82B2FB1D1BF9EA4 /* Pods_HenriPotierUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HenriPotierUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2D9E267E983A7A19BD46991 /* Pods_HenriPotierTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HenriPotierTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,8 +143,9 @@
 			isa = PBXGroup;
 			children = (
 				1E46150F2052A07E00B03360 /* Network */,
-				1E46150A205281C400B03360 /* Models */,
 				1E4614FF20527CD200B03360 /* Protocols */,
+				1E46150A205281C400B03360 /* Models */,
+				1E46152E2052E0BC00B03360 /* ViewModels */,
 				1E4614D0205275A000B03360 /* AppDelegate.swift */,
 				1E4614D2205275A000B03360 /* ViewController.swift */,
 				1E4614D4205275A000B03360 /* Main.storyboard */,
@@ -155,6 +162,7 @@
 				1E4615172052D1DC00B03360 /* Stubs */,
 				1E4614E7205275A000B03360 /* Info.plist */,
 				1E46152C2052D2DF00B03360 /* HenriPotierApiClientTests.swift */,
+				1E4615332052E78200B03360 /* ModelsTests.swift */,
 			);
 			path = HenriPotierTests;
 			sourceTree = "<group>";
@@ -174,6 +182,7 @@
 				1E46150020527CF300B03360 /* HTTPClient.swift */,
 				1E4615102052A0E500B03360 /* HPBookRepresentable.swift */,
 				1E4615122052A0FA00B03360 /* HPOfferRepresentable.swift */,
+				1E46152F2052E0F300B03360 /* BookViewModelRepresentable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -205,6 +214,14 @@
 				1E46151B2052D1FB00B03360 /* invalid_offers.json */,
 			);
 			path = Stubs;
+			sourceTree = "<group>";
+		};
+		1E46152E2052E0BC00B03360 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1E4615312052E1C800B03360 /* HPBookViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		4C32A767544F6F9AB8E3D691 /* Pods */ = {
@@ -556,7 +573,9 @@
 				1E4615132052A0FA00B03360 /* HPOfferRepresentable.swift in Sources */,
 				1E46150E2052841A00B03360 /* HPOffer.swift in Sources */,
 				1E46150720527DEB00B03360 /* Result.swift in Sources */,
+				1E4615322052E1C800B03360 /* HPBookViewModel.swift in Sources */,
 				1E46150120527CF300B03360 /* HTTPClient.swift in Sources */,
+				1E4615302052E0F300B03360 /* BookViewModelRepresentable.swift in Sources */,
 				1E4615092052800000B03360 /* HenriPotierApiClient+HTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -566,6 +585,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E46152D2052D2DF00B03360 /* HenriPotierApiClientTests.swift in Sources */,
+				1E4615342052E78200B03360 /* ModelsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
