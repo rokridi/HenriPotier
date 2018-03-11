@@ -25,12 +25,17 @@
 		1E46152A2052D1FC00B03360 /* books.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E4615202052D1FC00B03360 /* books.json */; };
 		1E46152B2052D1FC00B03360 /* invalid_books.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E4615212052D1FC00B03360 /* invalid_books.json */; };
 		1E46152D2052D2DF00B03360 /* HenriPotierApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E46152C2052D2DF00B03360 /* HenriPotierApiClientTests.swift */; };
-		1E4615302052E0F300B03360 /* BookViewModelRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E46152F2052E0F300B03360 /* BookViewModelRepresentable.swift */; };
+		1E4615302052E0F300B03360 /* HPBookViewModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E46152F2052E0F300B03360 /* HPBookViewModelable.swift */; };
 		1E4615322052E1C800B03360 /* HPBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4615312052E1C800B03360 /* HPBookViewModel.swift */; };
 		1E4615342052E78200B03360 /* ModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4615332052E78200B03360 /* ModelsTests.swift */; };
 		66D543D5343423F138CB0981 /* Pods_HenriPotier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15B6955AC7F15A108C5D036 /* Pods_HenriPotier.framework */; };
 		806192BAA173884724E61C17 /* Pods_HenriPotierUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7841CDA82B2FB1D1BF9EA4 /* Pods_HenriPotierUITests.framework */; };
 		8F3C849417E0887A567797DA /* Pods_HenriPotierTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2D9E267E983A7A19BD46991 /* Pods_HenriPotierTests.framework */; };
+		F4B4078120557A7400D9974A /* HPBookListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4078020557A7400D9974A /* HPBookListViewModel.swift */; };
+		F4B4078320557BCB00D9974A /* HPBookListViewModelInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4078220557BCB00D9974A /* HPBookListViewModelInput.swift */; };
+		F4B4078520557BD700D9974A /* HPBookListViewModelOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4078420557BD700D9974A /* HPBookListViewModelOutput.swift */; };
+		F4B4078720557BF600D9974A /* HPBookListViewModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4078620557BF600D9974A /* HPBookListViewModelable.swift */; };
+		F4B407892055852100D9974A /* HPCartViewModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B407882055852100D9974A /* HPCartViewModelable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +81,7 @@
 		1E4615202052D1FC00B03360 /* books.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = books.json; sourceTree = "<group>"; };
 		1E4615212052D1FC00B03360 /* invalid_books.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = invalid_books.json; sourceTree = "<group>"; };
 		1E46152C2052D2DF00B03360 /* HenriPotierApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HenriPotierApiClientTests.swift; sourceTree = "<group>"; };
-		1E46152F2052E0F300B03360 /* BookViewModelRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModelRepresentable.swift; sourceTree = "<group>"; };
+		1E46152F2052E0F300B03360 /* HPBookViewModelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPBookViewModelable.swift; sourceTree = "<group>"; };
 		1E4615312052E1C800B03360 /* HPBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPBookViewModel.swift; sourceTree = "<group>"; };
 		1E4615332052E78200B03360 /* ModelsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsTests.swift; sourceTree = "<group>"; };
 		5494984B4EDE675710CB96DA /* Pods-HenriPotier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotier.release.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotier/Pods-HenriPotier.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +90,11 @@
 		A486E2B39E3DD6D962F59766 /* Pods-HenriPotierUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotierUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotierUITests/Pods-HenriPotierUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CA8EFFC429E06507806CDBDD /* Pods-HenriPotierUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotierUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotierUITests/Pods-HenriPotierUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F15B6955AC7F15A108C5D036 /* Pods_HenriPotier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HenriPotier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4B4078020557A7400D9974A /* HPBookListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPBookListViewModel.swift; sourceTree = "<group>"; };
+		F4B4078220557BCB00D9974A /* HPBookListViewModelInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPBookListViewModelInput.swift; sourceTree = "<group>"; };
+		F4B4078420557BD700D9974A /* HPBookListViewModelOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPBookListViewModelOutput.swift; sourceTree = "<group>"; };
+		F4B4078620557BF600D9974A /* HPBookListViewModelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPBookListViewModelable.swift; sourceTree = "<group>"; };
+		F4B407882055852100D9974A /* HPCartViewModelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPCartViewModelable.swift; sourceTree = "<group>"; };
 		F52522A734B0A668900351EF /* Pods-HenriPotierTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotierTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotierTests/Pods-HenriPotierTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FED0202CB7E8BEC252C822C7 /* Pods-HenriPotier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotier/Pods-HenriPotier.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,7 +192,11 @@
 				1E46150020527CF300B03360 /* HTTPClient.swift */,
 				1E4615102052A0E500B03360 /* HPBookRepresentable.swift */,
 				1E4615122052A0FA00B03360 /* HPOfferRepresentable.swift */,
-				1E46152F2052E0F300B03360 /* BookViewModelRepresentable.swift */,
+				1E46152F2052E0F300B03360 /* HPBookViewModelable.swift */,
+				F4B4078220557BCB00D9974A /* HPBookListViewModelInput.swift */,
+				F4B4078420557BD700D9974A /* HPBookListViewModelOutput.swift */,
+				F4B4078620557BF600D9974A /* HPBookListViewModelable.swift */,
+				F4B407882055852100D9974A /* HPCartViewModelable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -220,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				1E4615312052E1C800B03360 /* HPBookViewModel.swift */,
+				F4B4078020557A7400D9974A /* HPBookListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -567,15 +582,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E46150C205281D100B03360 /* HPBook.swift in Sources */,
+				F4B4078720557BF600D9974A /* HPBookListViewModelable.swift in Sources */,
 				1E4614D3205275A000B03360 /* ViewController.swift in Sources */,
 				1E4614D1205275A000B03360 /* AppDelegate.swift in Sources */,
 				1E4615112052A0E500B03360 /* HPBookRepresentable.swift in Sources */,
 				1E4615132052A0FA00B03360 /* HPOfferRepresentable.swift in Sources */,
 				1E46150E2052841A00B03360 /* HPOffer.swift in Sources */,
+				F4B4078520557BD700D9974A /* HPBookListViewModelOutput.swift in Sources */,
 				1E46150720527DEB00B03360 /* Result.swift in Sources */,
+				F4B4078120557A7400D9974A /* HPBookListViewModel.swift in Sources */,
+				F4B4078320557BCB00D9974A /* HPBookListViewModelInput.swift in Sources */,
 				1E4615322052E1C800B03360 /* HPBookViewModel.swift in Sources */,
+				F4B407892055852100D9974A /* HPCartViewModelable.swift in Sources */,
 				1E46150120527CF300B03360 /* HTTPClient.swift in Sources */,
-				1E4615302052E0F300B03360 /* BookViewModelRepresentable.swift in Sources */,
+				1E4615302052E0F300B03360 /* HPBookViewModelable.swift in Sources */,
 				1E4615092052800000B03360 /* HenriPotierApiClient+HTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
