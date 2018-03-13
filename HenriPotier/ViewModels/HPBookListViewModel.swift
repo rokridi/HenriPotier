@@ -12,9 +12,28 @@ import HenriPotierApiClient
 
 class HPBookListViewModel: HPBookListViewModelable {
     
-    var cartQuantity: Int = 0
+    typealias Client = HenriPotierApiClient
+    
+    private var client: Client
+    
+    var cartQuantity: Int {
+        return selectedBooks.count
+    }
     
     private(set) var books: [HPBookRepresentable] = []
+    
+    private(set) var selectedBooks: [HPBookRepresentable] = [] {
+        didSet {
+            //cartQuantity = selectedBooks.count
+            reloadCartCount?()
+        }
+    }
+    
+    var error: Error? {
+        didSet {
+            errorClosure?()
+        }
+    }
     
     var loadingClosure: (() -> ())?
     
@@ -22,31 +41,45 @@ class HPBookListViewModel: HPBookListViewModelable {
     
     var reloadCartCount: (() -> ())?
     
-    func bookSelected(_ indexPath: IndexPath) {
-    }
-    
-    func bookDeselected(_ indexPath: IndexPath) {
-    }
-    
-    
-    typealias Client = HenriPotierApiClient
-    
-    private var client: Client
+    var errorClosure: (() -> ())?
     
     required init<Client>(booksClient: Client) {
         client = booksClient as! HPBookListViewModel.Client
     }
     
+    func bookSelected(_ indexPath: IndexPath) {
+        selectedBooks.append(books[indexPath.item])
+    }
+    
+    func bookDeselected(_ indexPath: IndexPath) {
+        selectedBooks = selectedBooks.filter({ $0.isbn != books[indexPath.item].isbn })
+    }
+}
+
+extension HPBookListViewModel {
+    
     func getBooks() {
-        
-        self.client.fetchBooks(completion: { result in
+        client.fetchBooks(completion: { [weak self] result in
+            
+            guard let `self` = self else {return}
             
             switch result {
             case .success(let books):
-                self.books = books
-            case .failure(_):
-                self.books = []
+                self.reloadWithBooks(books)
+                
+            case .failure(let error):
+                self.reloadWithBooks([])
+                self.error = error
             }
         })
+    }
+    
+    private func reloadWithBooks(_ books: [HPBook]) {
+        self.books = books
+        selectedBooks = self.selectedBooks.filter({ selectedBook in
+            return self.books.contains(where: { $0.isbn == selectedBook.isbn })
+        })
+        reloadClosure?()
+        loadingClosure?()
     }
 }
