@@ -23,7 +23,6 @@ class BookDetailViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     
     var imageView = UIImageView()
-    let dismissButton = UIButton(type: .custom)
     
     var bookViewModel: HPBookViewModelable!
     weak var delegate: BookDetailViewControllerDelegate?
@@ -46,7 +45,13 @@ extension BookDetailViewController {
         delegate?.bookDetailViewController(self, didAddBookToCart: bookViewModel)
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction private func didmiss(_ sender: UIButton) {
+        delegate?.bookDetailViewControllerDidDismiss(self)
+        dismiss(animated: true, completion: nil)
+    }
 }
+
 //MARK- Parallax
 
 extension BookDetailViewController {
@@ -62,7 +67,6 @@ extension BookDetailViewController {
         }
         
         imageView.contentMode = .scaleAspectFill
-        dismissButton.sizeToFit()
         scrollView.parallaxHeader.view = imageView
         scrollView.parallaxHeader.height = 0
         scrollView.parallaxHeader.minimumHeight = 0

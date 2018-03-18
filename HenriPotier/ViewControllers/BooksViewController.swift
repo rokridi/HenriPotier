@@ -23,6 +23,7 @@ class BooksViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Henri Potier"
         let client = HenriPotierApiClient(baseURL: "http://henri-potier.xebia.fr")
         viewModel = HPBookListViewModel(client: client)
         
