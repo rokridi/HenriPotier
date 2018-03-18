@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BookCollectionViewCell" id="gTV-IL-0wX" customClass="BookCollectionViewCell" customModule="HenriPotier" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="149" height="216"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="149" height="216"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3DG-Gh-vsL">
+                        <rect key="frame" x="0.0" y="0.0" width="149" height="149"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="3DG-Gh-vsL" secondAttribute="height" id="Rod-uj-MV6"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rL5-8Y-fQh">
+                        <rect key="frame" x="8" y="157" width="133" height="20.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ll4-Ey-8Gl">
+                        <rect key="frame" x="8" y="185" width="133" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="rL5-8Y-fQh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="A7W-5t-CbR"/>
+                <constraint firstAttribute="trailing" secondItem="3DG-Gh-vsL" secondAttribute="trailing" id="BbB-kf-aRv"/>
+                <constraint firstItem="ll4-Ey-8Gl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="HN6-9y-nxs"/>
+                <constraint firstItem="rL5-8Y-fQh" firstAttribute="top" secondItem="3DG-Gh-vsL" secondAttribute="bottom" constant="8" id="Rbx-de-B0e"/>
+                <constraint firstItem="3DG-Gh-vsL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="UE3-v4-ah5"/>
+                <constraint firstAttribute="trailing" secondItem="rL5-8Y-fQh" secondAttribute="trailing" constant="8" id="WwK-AG-ZSF"/>
+                <constraint firstItem="ll4-Ey-8Gl" firstAttribute="bottom" secondItem="gTV-IL-0wX" secondAttribute="bottom" priority="250" constant="-8" id="YST-tB-JjW"/>
+                <constraint firstItem="ll4-Ey-8Gl" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="bottom" constant="-8" id="gdV-8m-kgd"/>
+                <constraint firstAttribute="trailing" secondItem="ll4-Ey-8Gl" secondAttribute="trailing" constant="8" id="geK-xu-bDJ"/>
+                <constraint firstItem="ll4-Ey-8Gl" firstAttribute="top" secondItem="rL5-8Y-fQh" secondAttribute="bottom" constant="8" id="nlF-od-cSP"/>
+                <constraint firstItem="3DG-Gh-vsL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xdX-9x-s5e"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="149" height="216"/>
+            <connections>
+                <outlet property="imageView" destination="3DG-Gh-vsL" id="F11-oU-UHj"/>
+                <outlet property="priceLabel" destination="ll4-Ey-8Gl" id="B0W-Zc-hBS"/>
+                <outlet property="titleLabel" destination="rL5-8Y-fQh" id="VzK-wM-ONp"/>
+            </connections>
+            <point key="canvasLocation" x="114" y="-37"/>
+        </collectionViewCell>
+    </objects>
+</document>

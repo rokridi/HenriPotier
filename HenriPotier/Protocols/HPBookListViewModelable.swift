@@ -7,18 +7,19 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol HPBookListViewModelable {
     
-    associatedtype Client: HTTPClient
-    
-    var cartQuantity: Int {get set}
-    var books: [HPBookRepresentable] {get}
-    var loadingClosure: (()->())? {get set}
-    var reloadClosure: (()->())? {get set}
-    var reloadCartCount: (()->())? {get set}
-    func bookSelected(_ indexPath: IndexPath)
-    func bookDeselected(_ indexPath: IndexPath)
-    
-    init<Client>(booksClient: Client)
+    var books: Variable<[HPBookViewModelable]> {get set}
+    var selectedBooks: Variable<[HPBookViewModelable]> {get set}
+    var selectedBooksCount: Variable<Int> {get set}
+    var refreshBooks: PublishSubject<Void> {get set}
+    var bookSelected: PublishSubject<HPBookViewModelable> { get set }
+    var bookDeseleted: PublishSubject<Int> { get set }
+
+    init<HTTPClient>(client: HTTPClient)
+    func getBooks() -> Observable<Void>
+    func totalPrice() -> Observable<Int>
+    func finalPrice() -> Observable<Int>
 }

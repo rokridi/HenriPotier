@@ -10,6 +10,7 @@ import Foundation
 
 /// Represents a Book view model.
 struct HPBookViewModel: HPBookViewModelable {
+    
     /// ISBN of the book.
     var isbn: String
     
@@ -19,6 +20,9 @@ struct HPBookViewModel: HPBookViewModelable {
     /// Price of the book.
     var price: Int
     
+    /// URL cover.
+    var cover: String
+    
     /// Synopsis of the book.
     var synopsis: String
     
@@ -26,6 +30,7 @@ struct HPBookViewModel: HPBookViewModelable {
         isbn = ""
         title = ""
         price = 0
+        cover = ""
         synopsis = ""
     }
     
@@ -33,6 +38,7 @@ struct HPBookViewModel: HPBookViewModelable {
         isbn = book.isbn
         title = book.title
         price = book.price
+        cover = book.cover
         synopsis = book.synopsis.joined(separator: "\n")
     }
 }

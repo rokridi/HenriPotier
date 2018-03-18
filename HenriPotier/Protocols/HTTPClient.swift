@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 /// This protocol should be implemented by any HTTP client that provides books and offers.
 protocol HTTPClient {
@@ -16,15 +17,13 @@ protocol HTTPClient {
     
     /// Fetch books from Henri Potier API.
     ///
-    /// - Parameter completion: closure to be called when task finishes.
-    /// - Returns: URLSessionTask.
-    @discardableResult func fetchBooks(completion: @escaping ((Result<[BookType]>) -> Void)) -> URLSessionTask?
+    /// - Returns: Observable<BookType>.
+    @discardableResult func fetchBooks() -> Observable<[BookType]>
     
     /// Fetch offers for a list of books (represented by their ISBNs).
     ///
     /// - Parameters:
     ///   - ISBNs: ISBNs of the books.
-    ///   - completion: closure to be called when task finishes.
-    /// - Returns: URLSessionTask.
-    @discardableResult func fetchOffersFor(ISBNs: [String], completion: @escaping ((Result<[OfferType]>) -> Void)) -> URLSessionTask?
+    /// - Returns: Observable<HPOfferRepresentable>.
+    @discardableResult func fetchOffersFor(ISBNs: [String]) -> Observable<[OfferType]>
 }

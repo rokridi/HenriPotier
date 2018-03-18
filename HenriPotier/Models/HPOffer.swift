@@ -21,6 +21,17 @@ struct HPOffer: HPOfferRepresentable {
     var sliceValue: Int? = 0
     
     init() {}
+    
+    func bestPriceFor(price: Int) -> Int {
+        switch type {
+        case .percentage:
+            return priceWithPercentageReductionFor(price: price)
+        case .minus:
+            return priceWithMinusReductionFor(price: price)
+        case .slice:
+            return priceWithSliceReductionFor(price: price)
+        }
+    }
 }
 
 //MARK: - Init
@@ -36,7 +47,7 @@ extension HPOffer {
 
 //MARK: - Discount
 
-extension HPOfferRepresentable {
+extension HPOffer {
     
     func priceWithPercentageReductionFor(price: Int) -> Int {
         guard type == .percentage else {

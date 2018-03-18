@@ -33,4 +33,6 @@ protocol HPOfferRepresentable {
     
     init()
     init(type: HPOfferType, value: Int, sliceValue: Int?)
+    
+    func bestPriceFor(price: Int) -> Int
 }
