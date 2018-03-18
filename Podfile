@@ -6,11 +6,14 @@ target 'HenriPotier' do
   use_frameworks!
 
   # Pods for HenriPotier
-  pod 'HenriPotierApiClient', :git=> 'https://github.com/rokridi/HenriPotierApiClient.git'
+  
+  pod 'HenriPotierApiClient', :git => "https://github.com/rokridi/HenriPotierApiClient.git", :branch => "feature/Reactive"
+
   pod 'SDWebImage', '~> 4.0'
-  pod 'Whisper'
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
+  pod 'ParallaxHeader', '~> 2.0.0'
+  pod "MIBadgeButton-Swift", :git => 'https://github.com/mustafaibrahim989/MIBadgeButton-Swift.git', :branch => 'master'
 
   target 'HenriPotierTests' do
     inherit! :search_paths
