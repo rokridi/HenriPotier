@@ -14,7 +14,7 @@ import MIBadgeButton_Swift
 
 class BooksViewController: UIViewController {
     
-    var viewModel: HPBookListViewModelable!
+    var viewModel: HPBooksViewModelType!
     let cartButton = MIBadgeButton(type: .custom)
     private let disposeBag = DisposeBag()
     private var refreshControl = UIRefreshControl()
@@ -23,32 +23,18 @@ class BooksViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Henri Potier"
-        let client = HenriPotierApiClient(baseURL: "http://henri-potier.xebia.fr")
-        viewModel = HPBookListViewModel(client: client)
+        let viewDidLoadTrigger = self.rx
+            .sentMessage(#selector(UIViewController.viewDidLoad))
+            .map({ _ in Void() })
+            .asDriver(onErrorJustReturn: Void())
         
-        setupCollectionView()
-        setupRefreshControl()
-        setupCartButton()
+        let pullTrigger = collectionView.refreshControl!.rx
+            .controlEvent(.valueChanged)
+            .asDriver()
         
-        viewModel.getBooks()
-            .subscribe(onNext: { success in
-                self.refreshControl.endRefreshing()
-            }, onError: { error in
-                self.refreshControl.endRefreshing()
-            })
-            .disposed(by: disposeBag)
+        let trigger = Driver.merge(viewDidLoadTrigger, pullTrigger)
         
-        refreshBooks()
-    }
-}
-
-extension BooksViewController: BookDetailViewControllerDelegate {
-    func bookDetailViewController(_ viewController: BookDetailViewController, didAddBookToCart book: HPBookViewModelable) {
-        viewModel.bookSelected.onNext(book)
-    }
-    
-    func bookDetailViewControllerDidDismiss(_ viewController: BookDetailViewController) {
+        let input = HPBooksViewModel.HPBooksViewModelInput(refreshBooks: trigger)
     }
 }
 
@@ -57,24 +43,12 @@ extension BooksViewController {
     private func setupRefreshControl() {
         refreshControl.addTarget(self, action: #selector(BooksViewController.refreshBooks), for: .valueChanged)
         collectionView.refreshControl = self.refreshControl
+        viewModel = HPBooksViewModel(client: HenriPotierApiClient(baseURL: ""))
     }
     
     private func setupCollectionView() {
         
         collectionView.register(UINib(nibName: "\(BookCollectionViewCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(BookCollectionViewCell.self)")
-        
-        viewModel.books.asObservable().bind(to: collectionView.rx.items(cellIdentifier: "\(BookCollectionViewCell.self)", cellType: BookCollectionViewCell.self)) { index, model, cell in
-            cell.book = model
-            }.disposed(by: disposeBag)
-        
-        collectionView.rx.modelSelected(HPBookViewModelable.self)
-            .subscribe(onNext: { bookViewModel in
-                
-                let bookDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "\(BookDetailViewController.self)") as! BookDetailViewController
-                bookDetailVC.bookViewModel = bookViewModel
-                bookDetailVC.delegate = self
-                self.navigationController?.present(bookDetailVC, animated: true, completion: nil)
-            }).disposed(by: disposeBag)
     }
     
     private func setupCartButton() {
@@ -82,11 +56,6 @@ extension BooksViewController {
         cartButton.addTarget(self, action: #selector(BooksViewController.showCart), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: cartButton)
         navigationItem.rightBarButtonItem?.isEnabled = false
-        
-        viewModel.selectedBooksCount.asObservable().bind { selectedBooksCount in
-            self.cartButton.badgeString = selectedBooksCount > 0 ? "\(selectedBooksCount)" : ""
-            self.navigationItem.rightBarButtonItem?.isEnabled = selectedBooksCount > 0
-        }.disposed(by: disposeBag)
     }
     
     @objc private func showCart() {
@@ -96,7 +65,6 @@ extension BooksViewController {
     }
     
     @objc private func refreshBooks() {
-        viewModel.refreshBooks.onNext(())
     }
 }
 

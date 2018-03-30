@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import HenriPotierApiClient
 
 class CartViewController: UIViewController {
     
@@ -19,11 +20,9 @@ class CartViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     
-    var viewModel: HPBookListViewModelable!
+    var viewModel: HPBooksViewModelType!
     
     @IBAction func validateAndPay(_ sender: UIButton) {
-        viewModel.selectedBooks.value = []
-        viewModel.selectedBooksCount.value = 0
         navigationController?.popViewController(animated: true)
     }
     
@@ -46,30 +45,8 @@ class CartViewController: UIViewController {
                 self.tableView.deselectRow(at: indexPath, animated: true)
             })
             .disposed(by: disposeBag)
-        
-        tableView.rx.itemDeleted.asObservable().subscribe(onNext: {indexPath in
-            self.viewModel.bookDeseleted.onNext(indexPath.row)
-        }).disposed(by: disposeBag)
-        
-        viewModel.selectedBooks.asObservable().bind(to: tableView.rx.items(cellIdentifier: "\(BookTableViewCell.self)", cellType: BookTableViewCell.self)) { index, model, cell in
-            cell.book = model
-            
-            }
-            .disposed(by: disposeBag)
     }
     
     func setupPriceLabels() {
-        
-        viewModel.totalPrice().subscribe(onNext: { totalPrice in
-            self.priceLabel.text = "\(totalPrice) €"
-        }).disposed(by: disposeBag)
-        
-        viewModel.finalPrice()
-            .subscribe(onNext: { finalPrice in
-                self.finalPriceLabel.text = "\(finalPrice) €"
-            }, onError: { error in
-                self.finalPriceLabel.text = self.priceLabel.text
-            })
-            .disposed(by: disposeBag)
     }
 }

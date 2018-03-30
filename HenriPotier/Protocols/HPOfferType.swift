@@ -1,5 +1,5 @@
 //
-//  HPOfferRepresentable.swift
+//  HPOfferType.swift
 //  HenriPotier
 //
 //  Created by Mohamed Aymen Landolsi on 09/03/2018.
@@ -13,17 +13,17 @@ import Foundation
 /// - percentage: offer type is percentage.
 /// - minus: offer type is minus.
 /// - slice: offer type is slice.
-enum HPOfferType: String {
+enum HPOfferCategory: String {
     case percentage = "percentage"
     case minus = "minus"
     case slice = "slice"
 }
 
 /// Protocol implemented by any entity representing a Book.
-protocol HPOfferRepresentable {
+protocol HPOfferType {
     
     /// Type of tyhe offer.
-    var type: HPOfferType {get set}
+    var type: HPOfferCategory {get set}
     
     /// Value of the offer.
     var value: Int {get set}
@@ -32,7 +32,7 @@ protocol HPOfferRepresentable {
     var sliceValue: Int? {get set}
     
     init()
-    init(type: HPOfferType, value: Int, sliceValue: Int?)
+    init(type: HPOfferCategory, value: Int, sliceValue: Int?)
     
     func bestPriceFor(price: Int) -> Int
 }

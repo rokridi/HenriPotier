@@ -1,5 +1,5 @@
 //
-//  HPBookRepresentable.swift
+//  HPBookType.swift
 //  HenriPotier
 //
 //  Created by Mohamed Aymen Landolsi on 09/03/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol HPBookRepresentable {
+protocol HPBookType {
     
     /// ISBN of the book.
     var isbn: String {get set}

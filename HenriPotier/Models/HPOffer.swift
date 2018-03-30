@@ -9,10 +9,10 @@
 import Foundation
 
 /// Represents an offer
-struct HPOffer: HPOfferRepresentable {
+struct HPOffer: HPOfferType {
     
     /// Type of the offer.
-    var type: HPOfferType = .percentage
+    var type: HPOfferCategory = .percentage
     
     /// Value of the offer.
     var value: Int = 0
@@ -38,7 +38,7 @@ struct HPOffer: HPOfferRepresentable {
 
 extension HPOffer {
     
-    init(type: HPOfferType, value: Int, sliceValue: Int?) {
+    init(type: HPOfferCategory, value: Int, sliceValue: Int?) {
         self.type = type
         self.value = value
         self.sliceValue = sliceValue

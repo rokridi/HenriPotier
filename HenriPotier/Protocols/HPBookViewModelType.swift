@@ -1,5 +1,5 @@
 //
-//  HPBookViewModelable.swift
+//  HPBookViewModelType.swift
 //  HenriPotier
 //
 //  Created by Mohamed Aymen Landolsi on 09/03/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol HPBookViewModelable {
+protocol HPBookViewModelType {
     var isbn: String {get set}
     var title: String {get set}
     var price: Int {get set}
@@ -16,5 +16,5 @@ protocol HPBookViewModelable {
     var synopsis: String {get set}
     
     init()
-    init(book: HPBookRepresentable)
+    init(book: HPBookType)
 }

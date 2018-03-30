@@ -10,7 +10,7 @@ import UIKit
 import SDWebImage
 
 protocol BookCollectionViewCellRepresentable {
-    var book: HPBookViewModelable! {get set}
+    var book: HPBookViewModelType! {get set}
 }
 
 class BookCollectionViewCell: UICollectionViewCell, BookCollectionViewCellRepresentable {
@@ -20,7 +20,7 @@ class BookCollectionViewCell: UICollectionViewCell, BookCollectionViewCellRepres
     @IBOutlet private weak var priceLabel: UILabel!
     
     
-    var book: HPBookViewModelable! {
+    var book: HPBookViewModelType! {
         didSet {
             refreshContent()
         }

@@ -11,7 +11,7 @@ import ParallaxHeader
 import SDWebImage
 
 protocol BookDetailViewControllerDelegate: class {
-    func bookDetailViewController(_ viewController: BookDetailViewController, didAddBookToCart book: HPBookViewModelable)
+    func bookDetailViewController(_ viewController: BookDetailViewController, didAddBookToCart book: HPBookViewModelType)
     func bookDetailViewControllerDidDismiss(_ viewController: BookDetailViewController)
 }
 
@@ -24,7 +24,7 @@ class BookDetailViewController: UIViewController {
     
     var imageView = UIImageView()
     
-    var bookViewModel: HPBookViewModelable!
+    var bookViewModel: HPBookViewModelType!
     weak var delegate: BookDetailViewControllerDelegate?
     
     override func viewDidLoad() {

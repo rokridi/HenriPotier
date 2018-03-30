@@ -7,7 +7,7 @@ target 'HenriPotier' do
 
   # Pods for HenriPotier
   
-  pod 'HenriPotierApiClient', :git => "https://github.com/rokridi/HenriPotierApiClient.git", :branch => "feature/Reactive"
+  pod 'HenriPotierApiClient', :git => "https://github.com/rokridi/HenriPotierApiClient.git"
 
   pod 'SDWebImage', '~> 4.0'
   pod 'RxSwift',    '~> 4.0'

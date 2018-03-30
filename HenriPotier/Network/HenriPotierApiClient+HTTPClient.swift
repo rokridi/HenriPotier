@@ -11,9 +11,18 @@ import RxSwift
 import HenriPotierApiClient
 
 extension HenriPotierApiClient: HTTPClient {
+    func fetchBooks<BookType>() -> Observable<[BookType]> where BookType : HPBookType {
+        return books().map({ books in
+            books.map({ BookType(book: $0) })
+        })
+    }
     
-    typealias BookType = HPBook
-    typealias OfferType = HPOffer
+    func fetchOffersFor<OfferType>(ISBNs: [String]) -> Observable<[OfferType]> where OfferType : HPOfferType {
+        return offers(ISBNs: ISBNs).map({ offers in
+            offers.map({ OfferType(offer: $0) })
+        })
+    }
+    
     
     @discardableResult func fetchBooks() -> Observable<[HPBook]> {
         return books().map {return $0.map({ HPBook(book: $0) })}
@@ -24,16 +33,16 @@ extension HenriPotierApiClient: HTTPClient {
     }
 }
 
-extension HPBookRepresentable {
+extension HPBookType {
     init(book: HPApiBook) {
         self.init(isbn: book.isbn, title: book.title, price: book.price, cover: book.cover, synopsis: book.synopsis)
     }
 }
 
-extension HPOfferRepresentable {
+extension HPOfferType {
     init(offer: HPApiOffer) {
         self.init()
-        type = HPOfferType(rawValue: offer.type.rawValue)!
+        type = HPOfferCategory(rawValue: offer.type.rawValue)!
         value = offer.value
         sliceValue = offer.sliceValue
     }

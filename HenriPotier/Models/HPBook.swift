@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct HPBook: HPBookRepresentable {
+struct HPBook: HPBookType {
     
     var isbn: String = ""
     var title: String = ""
