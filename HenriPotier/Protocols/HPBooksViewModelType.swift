@@ -13,14 +13,20 @@ import RxCocoa
 
 protocol HPBooksViewModelInputType {
     var refreshBooks: Driver<Void> {get set}
+    var bookSelected: Driver<IndexPath> {get set}
 }
 
 protocol HPBooksViewModelOutputType {
-    var refreshing: Driver<Bool> {get set}
+    var books: Driver<[HPBookViewModelType]> {get set}
+    var selectedBook: Driver<HPBookViewModelType> {get set}
+    var cartBooksCount: Observable<Int> {get set}
+    var cartButtonEnabled: Observable<Bool> {get set}
+    var error: Driver<String> {get set}
+    var isRefreshing: Driver<Bool> {get set}
 }
 
 protocol HPBooksViewModelType {
     
-    init<Client: HTTPClient>(client: Client)
+    init(client: HTTPClient)
     func transform(input: HPBooksViewModelInputType) -> HPBooksViewModelOutputType
 }

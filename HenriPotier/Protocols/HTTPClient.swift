@@ -15,12 +15,12 @@ protocol HTTPClient {
     /// Fetch books from Henri Potier API.
     ///
     /// - Returns: Observable<BookType>.
-    @discardableResult func fetchBooks<BookType: HPBookType>() -> Observable<[BookType]>
+    @discardableResult func fetchBooks() -> Observable<[HPBookType]>
     
     /// Fetch offers for a list of books (represented by their ISBNs).
     ///
     /// - Parameters:
     ///   - ISBNs: ISBNs of the books.
     /// - Returns: Observable<HPOfferRepresentable>.
-    @discardableResult func fetchOffersFor<OfferType: HPOfferType>(ISBNs: [String]) -> Observable<[OfferType]>
+    @discardableResult func fetchOffersFor(ISBNs: [String]) -> Observable<[HPOfferType]>
 }

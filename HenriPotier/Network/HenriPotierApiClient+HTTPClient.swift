@@ -11,25 +11,16 @@ import RxSwift
 import HenriPotierApiClient
 
 extension HenriPotierApiClient: HTTPClient {
-    func fetchBooks<BookType>() -> Observable<[BookType]> where BookType : HPBookType {
+    func fetchBooks() -> Observable<[HPBookType]> {
         return books().map({ books in
-            books.map({ BookType(book: $0) })
+            books.map({ HPBook(book: $0) })
         })
     }
     
-    func fetchOffersFor<OfferType>(ISBNs: [String]) -> Observable<[OfferType]> where OfferType : HPOfferType {
+    func fetchOffersFor(ISBNs: [String]) -> Observable<[HPOfferType]> {
         return offers(ISBNs: ISBNs).map({ offers in
-            offers.map({ OfferType(offer: $0) })
+            offers.map({ HPOffer(offer: $0) })
         })
-    }
-    
-    
-    @discardableResult func fetchBooks() -> Observable<[HPBook]> {
-        return books().map {return $0.map({ HPBook(book: $0) })}
-    }
-    
-    @discardableResult func fetchOffersFor(ISBNs: [String]) -> Observable<[HPOffer]> {
-        return offers(ISBNs: ISBNs).map {return $0.map({ HPOffer(offer: $0) })}
     }
 }
 

@@ -9,18 +9,13 @@
 import UIKit
 import SDWebImage
 
-protocol BookCollectionViewCellRepresentable {
-    var book: HPBookViewModelType! {get set}
-}
-
-class BookCollectionViewCell: UICollectionViewCell, BookCollectionViewCellRepresentable {
+class BookCollectionViewCell: UICollectionViewCell, HPBookCollectionViewCellType {
     
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
     
-    
-    var book: HPBookViewModelType! {
+    var bookViewModel: HPBookViewModelType! {
         didSet {
             refreshContent()
         }
@@ -33,8 +28,8 @@ class BookCollectionViewCell: UICollectionViewCell, BookCollectionViewCellRepres
 
 extension BookCollectionViewCell {
     private func refreshContent() {
-        titleLabel.text = book.title
-        priceLabel.text = String(book.price)
-        imageView.sd_setImage(with: URL(string: book.cover), placeholderImage: nil)
+        titleLabel.text = bookViewModel.title
+        priceLabel.text = String(bookViewModel.price)
+        imageView.sd_setImage(with: URL(string: bookViewModel.cover), placeholderImage: nil)
     }
 }
