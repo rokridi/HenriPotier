@@ -87,10 +87,12 @@ extension BooksViewController {
             print("selectedBook: \(bookVM)")
         }).disposed(by: disposeBag)
         
-        output.isConnected.dri
+        output.isConnected.drive(onNext: { _ in
+            self.showInternetIsBackAlert()
+        }).disposed(by: disposeBag)
         
-        output.isDisconnected.drive(onNext: { isReachable in
-            isReachable ? self.showInternetIsBackAlert() : self.showInternetIsDownAlert()
+        output.isDisconnected.drive(onNext: { _ in
+            self.showInternetIsDownAlert()
         }).disposed(by: disposeBag)
     }
     
