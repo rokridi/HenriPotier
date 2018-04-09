@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
-import RxAlertController
+import Reachability
 import HenriPotierApiClient
 
 class HPBooksViewModel: HPBooksViewModelType {
@@ -26,54 +26,70 @@ class HPBooksViewModel: HPBooksViewModelType {
         var cartButtonEnabled: Observable<Bool>
         var error: Driver<String>
         var isRefreshing: Driver<Bool>
+        var isRetrying: Driver<Bool>
+        var isConnected: Driver<Void>
+        var isDisconnected: Driver<Void>
     }
     
-    private let client: HTTPClient
     private var cartBooks = Variable<[HPBookViewModelType]>([])
     private var error = PublishSubject<String>()
     private var isRefreshing = PublishSubject<Bool>()
+    private var isRetrying = PublishSubject<Bool>()
+    private let client: HTTPClient
+    let reachability = Reachability(hostname: "http://henri-potier.xebia.fr")!
     private let disposeBag = DisposeBag()
         
     required init(client: HTTPClient) {
         self.client = client
+        try? reachability.startNotifier()
     }
     
     func transform(input: HPBooksViewModelInputType) -> HPBooksViewModelOutputType {
         
-        let outputError = self.error.asDriver(onErrorJustReturn: "kkkkkk")
+        let outputError = self.error.asDriver(onErrorJustReturn: "")
         
-        let outputBooks = input.refreshBooks.flatMapLatest { [unowned self] _  -> Driver<[HPBookViewModelType]> in
-            
+        let booksObservable = self.client.fetchBooks().do(onNext: { books in
+            self.isRefreshing.onNext(false)
+        }, onError: { error in
+            self.isRefreshing.onNext(false)
+            self.error.onNext(error.localizedDescription)
+        }, onSubscribed: {
             self.isRefreshing.onNext(true)
-            return self.client.fetchBooks().map({ [weak self] books  in
-                self?.isRefreshing.onNext(false)
-                return books.map({ return HPBookViewModel(book: $0) })}).do(onNext: { [weak self] _ in
-                    self?.isRefreshing.onNext(false)
-                })
-                .retryWhen({ errorObservable -> Observable<Error> in
-                    return errorObservable.enumerated().flatMap({ [weak self] (index, error) -> Observable<Error> in
-                        
-                        guard index < 3, case let ApiError.unknownError(error: anError) = error, (anError as NSError).code == -1003  else {
-                            //Do not retry.
-                            self?.isRefreshing.onNext(false)
-                            return errorObservable.flatMap { Observable.error($0) }
-                        }
-                        
-                        self?.isRefreshing.onNext(true)
-                        //Retry
-                        return Observable.just(error)
-                    })
-                })
-                .asDriver(onErrorJustReturn: [])
+        }).retryWhen({ (errorObservable: Observable<Error>) in
+            return errorObservable.enumerated().flatMap({ (attempt, error) -> Observable<Void> in
+                
+                guard attempt < 4 else {
+                    return Observable.error(error)
+                }
+                let didBecomeReachable: Observable<Void> = self.reachability.rx.isConnected
+                
+                return Observable.merge(didBecomeReachable)
+            })
+        })
+        
+        let outputBooks = input.refreshBooks.flatMapLatest { _  -> Driver<[HPBookViewModelType]> in
+            return booksObservable.map({ books  in return books.map({ return HPBookViewModel(book: $0) })}).asDriver(onErrorJustReturn: [])
         }
         
-        let selectedBook = input.bookSelected.withLatestFrom(outputBooks) { (indexPath, aBooks) in
-            return aBooks[indexPath.item]
-        }.asDriver()
+        let selectedBook = input.bookSelected
+            .withLatestFrom(outputBooks.asDriver(onErrorJustReturn: [])) { $1[$0.item]}
+            .asDriver()
         
         let cartBooksCount = cartBooks.asObservable().map { $0.count }
         let cartButtonEnabled = cartBooks.asObservable().map { $0.count > 0 }
+        let isRefreshing = self.isRefreshing.asDriver(onErrorJustReturn: false)
+        let isRetrying = self.isRetrying.asDriver(onErrorJustReturn: false)
+        let isConnected = reachability.rx.isConnected.asDriver(onErrorJustReturn: ())
+        let isDisconnected = reachability.rx.isDisconnected.asDriver(onErrorJustReturn: ())
         
-        return HPBooksViewModelOutput(books: outputBooks, selectedBook: selectedBook, cartBooksCount: cartBooksCount, cartButtonEnabled: cartButtonEnabled, error: outputError, isRefreshing: self.isRefreshing.asDriver(onErrorJustReturn: false))
+        return HPBooksViewModelOutput(books: outputBooks,
+                                      selectedBook: selectedBook,
+                                      cartBooksCount: cartBooksCount,
+                                      cartButtonEnabled: cartButtonEnabled,
+                                      error: outputError,
+                                      isRefreshing: isRefreshing,
+                                      isRetrying: isRetrying,
+                                      isConnected: isConnected,
+                                      isDisconnected: isDisconnected)
     }
 }

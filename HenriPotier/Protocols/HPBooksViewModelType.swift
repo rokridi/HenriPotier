@@ -23,6 +23,9 @@ protocol HPBooksViewModelOutputType {
     var cartButtonEnabled: Observable<Bool> {get set}
     var error: Driver<String> {get set}
     var isRefreshing: Driver<Bool> {get set}
+    var isRetrying: Driver<Bool> {get set}
+    var isConnected: Driver<Void> {get set}
+    var isDisconnected: Driver<Void> {get set}
 }
 
 protocol HPBooksViewModelType {

@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180160FD7C927FE3FDA00E6E /* Pods_HenriPotier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DE2780D26C8021A1CE8BF95 /* Pods_HenriPotier.framework */; };
 		1E00EC3420738BE000741D7F /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E00EC3320738BE000741D7F /* CartViewModel.swift */; };
 		1E00EC3620738BEE00741D7F /* HPCartViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E00EC3520738BEE00741D7F /* HPCartViewModelType.swift */; };
 		1E00EC382073B85100741D7F /* HPBookCollectionViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E00EC372073B85100741D7F /* HPBookCollectionViewCellType.swift */; };
+		1E3F56EA20767543006AB03E /* Reachability+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F56E820767543006AB03E /* Reachability+Rx.swift */; };
+		1E3F56EB20767543006AB03E /* ObservableType+Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F56E920767543006AB03E /* ObservableType+Reachability.swift */; };
 		1E4614D1205275A000B03360 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4614D0205275A000B03360 /* AppDelegate.swift */; };
 		1E4614D3205275A000B03360 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4614D2205275A000B03360 /* BooksViewController.swift */; };
 		1E4614D6205275A000B03360 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E4614D4205275A000B03360 /* Main.storyboard */; };
@@ -17,7 +20,6 @@
 		1E4614DB205275A000B03360 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E4614D9205275A000B03360 /* LaunchScreen.storyboard */; };
 		1E4614F1205275A000B03360 /* HenriPotierUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4614F0205275A000B03360 /* HenriPotierUITests.swift */; };
 		1E46150120527CF300B03360 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E46150020527CF300B03360 /* HTTPClient.swift */; };
-		1E46150720527DEB00B03360 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E46150620527DEB00B03360 /* Result.swift */; };
 		1E4615092052800000B03360 /* HenriPotierApiClient+HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4615082052800000B03360 /* HenriPotierApiClient+HTTPClient.swift */; };
 		1E46150C205281D100B03360 /* HPBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E46150B205281D100B03360 /* HPBook.swift */; };
 		1E46150E2052841A00B03360 /* HPOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E46150D2052841A00B03360 /* HPOffer.swift */; };
@@ -30,9 +32,8 @@
 		1E4615302052E0F300B03360 /* HPBookViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E46152F2052E0F300B03360 /* HPBookViewModelType.swift */; };
 		1E4615322052E1C800B03360 /* HPBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4615312052E1C800B03360 /* HPBookViewModel.swift */; };
 		1E591C58206E480100ADAB88 /* HPBooksViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E591C57206E480100ADAB88 /* HPBooksViewModelType.swift */; };
-		79777793ACAB66075A2CED59 /* Pods_HenriPotierUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639CC0E67A6E42FDAAEC6A37 /* Pods_HenriPotierUITests.framework */; };
-		8FBAB353E5CE95DFA211CB74 /* Pods_HenriPotier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4175090C32251D7E2863CFFE /* Pods_HenriPotier.framework */; };
-		9C5A93ABC95F6A980175F285 /* Pods_HenriPotierTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D845EE1C66BE662E604670DD /* Pods_HenriPotierTests.framework */; };
+		582C71302F6E79C04CCB22DF /* Pods_HenriPotierTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C45F2E8A79A71691764D05F /* Pods_HenriPotierTests.framework */; };
+		DC8DD161CD912E72762721EE /* Pods_HenriPotierUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C132BDB220021BCEC92EB7FB /* Pods_HenriPotierUITests.framework */; };
 		F496F4AE205E84AE003041B9 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496F4AD205E84AE003041B9 /* BookDetailViewController.swift */; };
 		F496F4B0205EA7D8003041B9 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496F4AF205EA7D8003041B9 /* CartViewController.swift */; };
 		F496F4B4205EA86F003041B9 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F496F4B2205EA86F003041B9 /* BookTableViewCell.swift */; };
@@ -60,9 +61,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C45F2E8A79A71691764D05F /* Pods_HenriPotierTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HenriPotierTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E00EC3320738BE000741D7F /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		1E00EC3520738BEE00741D7F /* HPCartViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPCartViewModelType.swift; sourceTree = "<group>"; };
 		1E00EC372073B85100741D7F /* HPBookCollectionViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPBookCollectionViewCellType.swift; sourceTree = "<group>"; };
+		1E3F56E820767543006AB03E /* Reachability+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reachability+Rx.swift"; sourceTree = "<group>"; };
+		1E3F56E920767543006AB03E /* ObservableType+Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObservableType+Reachability.swift"; sourceTree = "<group>"; };
 		1E4614CD205275A000B03360 /* HenriPotier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HenriPotier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E4614D0205275A000B03360 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E4614D2205275A000B03360 /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +80,6 @@
 		1E4614F0205275A000B03360 /* HenriPotierUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HenriPotierUITests.swift; sourceTree = "<group>"; };
 		1E4614F2205275A000B03360 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E46150020527CF300B03360 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
-		1E46150620527DEB00B03360 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		1E4615082052800000B03360 /* HenriPotierApiClient+HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HenriPotierApiClient+HTTPClient.swift"; sourceTree = "<group>"; };
 		1E46150B205281D100B03360 /* HPBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPBook.swift; sourceTree = "<group>"; };
 		1E46150D2052841A00B03360 /* HPOffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPOffer.swift; sourceTree = "<group>"; };
@@ -89,15 +92,13 @@
 		1E46152F2052E0F300B03360 /* HPBookViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPBookViewModelType.swift; sourceTree = "<group>"; };
 		1E4615312052E1C800B03360 /* HPBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPBookViewModel.swift; sourceTree = "<group>"; };
 		1E591C57206E480100ADAB88 /* HPBooksViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPBooksViewModelType.swift; sourceTree = "<group>"; };
-		23433FDF2DDBAB8727AF4E84 /* Pods-HenriPotierTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotierTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotierTests/Pods-HenriPotierTests.release.xcconfig"; sourceTree = "<group>"; };
-		2AE1DD1BDC42A1D18CF44306 /* Pods-HenriPotierUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotierUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotierUITests/Pods-HenriPotierUITests.release.xcconfig"; sourceTree = "<group>"; };
-		4175090C32251D7E2863CFFE /* Pods_HenriPotier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HenriPotier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		49B6A5D5D77BDA7E59ACEA5C /* Pods-HenriPotier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotier/Pods-HenriPotier.debug.xcconfig"; sourceTree = "<group>"; };
-		639CC0E67A6E42FDAAEC6A37 /* Pods_HenriPotierUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HenriPotierUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7830C6B975059069199C7C10 /* Pods-HenriPotier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotier.release.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotier/Pods-HenriPotier.release.xcconfig"; sourceTree = "<group>"; };
-		A65A227FC798AF6ADA5A4CB3 /* Pods-HenriPotierTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotierTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotierTests/Pods-HenriPotierTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B16740483F73B4B88B7FDFB3 /* Pods-HenriPotierUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotierUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotierUITests/Pods-HenriPotierUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		D845EE1C66BE662E604670DD /* Pods_HenriPotierTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HenriPotierTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25FE26B8E53A66E11CDA8371 /* Pods-HenriPotier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotier/Pods-HenriPotier.debug.xcconfig"; sourceTree = "<group>"; };
+		49264E76FE94511511DE9658 /* Pods-HenriPotierTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotierTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotierTests/Pods-HenriPotierTests.release.xcconfig"; sourceTree = "<group>"; };
+		5DE2780D26C8021A1CE8BF95 /* Pods_HenriPotier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HenriPotier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D492E809A10D1965217EFFB /* Pods-HenriPotier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotier.release.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotier/Pods-HenriPotier.release.xcconfig"; sourceTree = "<group>"; };
+		8505B33B651311A9F7CA263E /* Pods-HenriPotierTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotierTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotierTests/Pods-HenriPotierTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B864AA22B1EDA3CC5DFCF2D3 /* Pods-HenriPotierUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotierUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotierUITests/Pods-HenriPotierUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C132BDB220021BCEC92EB7FB /* Pods_HenriPotierUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HenriPotierUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F496F4AD205E84AE003041B9 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		F496F4AF205EA7D8003041B9 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		F496F4B2205EA86F003041B9 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
@@ -105,6 +106,7 @@
 		F4A39443205DD66500B5924F /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		F4A39444205DD66500B5924F /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
 		F4B4078020557A7400D9974A /* HPBooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPBooksViewModel.swift; sourceTree = "<group>"; };
+		F9455D0AA5763BB27A3ED8A4 /* Pods-HenriPotierUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HenriPotierUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HenriPotierUITests/Pods-HenriPotierUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FBAB353E5CE95DFA211CB74 /* Pods_HenriPotier.framework in Frameworks */,
+				180160FD7C927FE3FDA00E6E /* Pods_HenriPotier.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C5A93ABC95F6A980175F285 /* Pods_HenriPotierTests.framework in Frameworks */,
+				582C71302F6E79C04CCB22DF /* Pods_HenriPotierTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,13 +130,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79777793ACAB66075A2CED59 /* Pods_HenriPotierUITests.framework in Frameworks */,
+				DC8DD161CD912E72762721EE /* Pods_HenriPotierUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E3F56E420767354006AB03E /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				1E3F56E920767543006AB03E /* ObservableType+Reachability.swift */,
+				1E3F56E820767543006AB03E /* Reachability+Rx.swift */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 		1E4614C4205275A000B03360 = {
 			isa = PBXGroup;
 			children = (
@@ -142,8 +153,8 @@
 				1E4614E4205275A000B03360 /* HenriPotierTests */,
 				1E4614EF205275A000B03360 /* HenriPotierUITests */,
 				1E4614CE205275A000B03360 /* Products */,
-				AFFBAF92A4565F951361DDC2 /* Pods */,
-				7C7D4CE9F8462650913342AF /* Frameworks */,
+				846C7B20636076DBA343A6E2 /* Pods */,
+				CCAD87B66B37BC9F34587D26 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -219,7 +230,7 @@
 		1E46150F2052A07E00B03360 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				1E46150620527DEB00B03360 /* Result.swift */,
+				1E3F56E420767354006AB03E /* Reachability */,
 				1E4615082052800000B03360 /* HenriPotierApiClient+HTTPClient.swift */,
 			);
 			path = Network;
@@ -246,27 +257,27 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		7C7D4CE9F8462650913342AF /* Frameworks */ = {
+		846C7B20636076DBA343A6E2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4175090C32251D7E2863CFFE /* Pods_HenriPotier.framework */,
-				D845EE1C66BE662E604670DD /* Pods_HenriPotierTests.framework */,
-				639CC0E67A6E42FDAAEC6A37 /* Pods_HenriPotierUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		AFFBAF92A4565F951361DDC2 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				49B6A5D5D77BDA7E59ACEA5C /* Pods-HenriPotier.debug.xcconfig */,
-				7830C6B975059069199C7C10 /* Pods-HenriPotier.release.xcconfig */,
-				A65A227FC798AF6ADA5A4CB3 /* Pods-HenriPotierTests.debug.xcconfig */,
-				23433FDF2DDBAB8727AF4E84 /* Pods-HenriPotierTests.release.xcconfig */,
-				B16740483F73B4B88B7FDFB3 /* Pods-HenriPotierUITests.debug.xcconfig */,
-				2AE1DD1BDC42A1D18CF44306 /* Pods-HenriPotierUITests.release.xcconfig */,
+				25FE26B8E53A66E11CDA8371 /* Pods-HenriPotier.debug.xcconfig */,
+				7D492E809A10D1965217EFFB /* Pods-HenriPotier.release.xcconfig */,
+				8505B33B651311A9F7CA263E /* Pods-HenriPotierTests.debug.xcconfig */,
+				49264E76FE94511511DE9658 /* Pods-HenriPotierTests.release.xcconfig */,
+				B864AA22B1EDA3CC5DFCF2D3 /* Pods-HenriPotierUITests.debug.xcconfig */,
+				F9455D0AA5763BB27A3ED8A4 /* Pods-HenriPotierUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		CCAD87B66B37BC9F34587D26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5DE2780D26C8021A1CE8BF95 /* Pods_HenriPotier.framework */,
+				0C45F2E8A79A71691764D05F /* Pods_HenriPotierTests.framework */,
+				C132BDB220021BCEC92EB7FB /* Pods_HenriPotierUITests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F496F4AC205E848E003041B9 /* ViewControllers */ = {
@@ -313,12 +324,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E4614F5205275A000B03360 /* Build configuration list for PBXNativeTarget "HenriPotier" */;
 			buildPhases = (
-				F59E1CAF5BCFA475B3540567 /* [CP] Check Pods Manifest.lock */,
+				E3AA7C1C4F60D115F418C7D8 /* [CP] Check Pods Manifest.lock */,
 				1E4614C9205275A000B03360 /* Sources */,
 				1E4614CA205275A000B03360 /* Frameworks */,
 				1E4614CB205275A000B03360 /* Resources */,
-				3A21C87C490B2B3ACF5716EC /* [CP] Embed Pods Frameworks */,
-				BD855AD0E14B83427D1E06D0 /* [CP] Copy Pods Resources */,
+				503B778988D60EA9FE21FF5E /* [CP] Embed Pods Frameworks */,
+				7A51939705EA3A34353D35E5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -333,12 +344,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E4614F8205275A000B03360 /* Build configuration list for PBXNativeTarget "HenriPotierTests" */;
 			buildPhases = (
-				7FE8DE08EE779418B4474424 /* [CP] Check Pods Manifest.lock */,
+				5FD6EC99FB299881A497C4AF /* [CP] Check Pods Manifest.lock */,
 				1E4614DD205275A000B03360 /* Sources */,
 				1E4614DE205275A000B03360 /* Frameworks */,
 				1E4614DF205275A000B03360 /* Resources */,
-				1EF175862FCF0E63D3A511BF /* [CP] Embed Pods Frameworks */,
-				6D940075F1555B47BEB35EF2 /* [CP] Copy Pods Resources */,
+				623D37E0E6279893A7436263 /* [CP] Embed Pods Frameworks */,
+				E2BE313C5154256861B5F125 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -354,12 +365,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E4614FB205275A000B03360 /* Build configuration list for PBXNativeTarget "HenriPotierUITests" */;
 			buildPhases = (
-				E78D850EB98B9702A29B2B10 /* [CP] Check Pods Manifest.lock */,
+				09CA02CFBE83070809251BB4 /* [CP] Check Pods Manifest.lock */,
 				1E4614E8205275A000B03360 /* Sources */,
 				1E4614E9205275A000B03360 /* Frameworks */,
 				1E4614EA205275A000B03360 /* Resources */,
-				56250FEC843EEC20D3BD7BD4 /* [CP] Embed Pods Frameworks */,
-				9A55DA305214421D2AA54704 /* [CP] Copy Pods Resources */,
+				9E32ECCD03B3989E93057BB3 /* [CP] Embed Pods Frameworks */,
+				4267EE7856ED27E3A85E52A3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -452,7 +463,102 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1EF175862FCF0E63D3A511BF /* [CP] Embed Pods Frameworks */ = {
+		09CA02CFBE83070809251BB4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HenriPotierUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4267EE7856ED27E3A85E52A3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HenriPotierUITests/Pods-HenriPotierUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		503B778988D60EA9FE21FF5E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HenriPotier/Pods-HenriPotier-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/HenriPotierApiClient/HenriPotierApiClient.framework",
+				"${BUILT_PRODUCTS_DIR}/MIBadgeButton-Swift/MIBadgeButton_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ParallaxHeader/ParallaxHeader.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HenriPotierApiClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MIBadgeButton_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ParallaxHeader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HenriPotier/Pods-HenriPotier-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FD6EC99FB299881A497C4AF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HenriPotierTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		623D37E0E6279893A7436263 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -474,110 +580,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HenriPotierTests/Pods-HenriPotierTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3A21C87C490B2B3ACF5716EC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-HenriPotier/Pods-HenriPotier-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
-				"${BUILT_PRODUCTS_DIR}/HenriPotierApiClient/HenriPotierApiClient.framework",
-				"${BUILT_PRODUCTS_DIR}/MIBadgeButton-Swift/MIBadgeButton_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/ParallaxHeader/ParallaxHeader.framework",
-				"${BUILT_PRODUCTS_DIR}/RxAlertController/RxAlertController.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HenriPotierApiClient.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MIBadgeButton_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ParallaxHeader.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlertController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HenriPotier/Pods-HenriPotier-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		56250FEC843EEC20D3BD7BD4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HenriPotierUITests/Pods-HenriPotierUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6D940075F1555B47BEB35EF2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HenriPotierTests/Pods-HenriPotierTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7FE8DE08EE779418B4474424 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HenriPotierTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9A55DA305214421D2AA54704 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HenriPotierUITests/Pods-HenriPotierUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BD855AD0E14B83427D1E06D0 /* [CP] Copy Pods Resources */ = {
+		7A51939705EA3A34353D35E5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -592,25 +595,37 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HenriPotier/Pods-HenriPotier-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E78D850EB98B9702A29B2B10 /* [CP] Check Pods Manifest.lock */ = {
+		9E32ECCD03B3989E93057BB3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HenriPotierUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HenriPotierUITests/Pods-HenriPotierUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F59E1CAF5BCFA475B3540567 /* [CP] Check Pods Manifest.lock */ = {
+		E2BE313C5154256861B5F125 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HenriPotierTests/Pods-HenriPotierTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3AA7C1C4F60D115F418C7D8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -637,15 +652,16 @@
 			files = (
 				1E46150C205281D100B03360 /* HPBook.swift in Sources */,
 				1E00EC3620738BEE00741D7F /* HPCartViewModelType.swift in Sources */,
+				1E3F56EA20767543006AB03E /* Reachability+Rx.swift in Sources */,
 				F4A39445205DD66500B5924F /* BookCollectionViewCell.swift in Sources */,
 				1E4614D3205275A000B03360 /* BooksViewController.swift in Sources */,
 				1E4614D1205275A000B03360 /* AppDelegate.swift in Sources */,
+				1E3F56EB20767543006AB03E /* ObservableType+Reachability.swift in Sources */,
 				1E4615112052A0E500B03360 /* HPBookType.swift in Sources */,
 				1E4615132052A0FA00B03360 /* HPOfferType.swift in Sources */,
 				1E00EC3420738BE000741D7F /* CartViewModel.swift in Sources */,
 				1E46150E2052841A00B03360 /* HPOffer.swift in Sources */,
 				1E591C58206E480100ADAB88 /* HPBooksViewModelType.swift in Sources */,
-				1E46150720527DEB00B03360 /* Result.swift in Sources */,
 				F496F4B4205EA86F003041B9 /* BookTableViewCell.swift in Sources */,
 				F4B4078120557A7400D9974A /* HPBooksViewModel.swift in Sources */,
 				1E00EC382073B85100741D7F /* HPBookCollectionViewCellType.swift in Sources */,
@@ -817,7 +833,7 @@
 		};
 		1E4614F6205275A000B03360 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 49B6A5D5D77BDA7E59ACEA5C /* Pods-HenriPotier.debug.xcconfig */;
+			baseConfigurationReference = 25FE26B8E53A66E11CDA8371 /* Pods-HenriPotier.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -833,7 +849,7 @@
 		};
 		1E4614F7205275A000B03360 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7830C6B975059069199C7C10 /* Pods-HenriPotier.release.xcconfig */;
+			baseConfigurationReference = 7D492E809A10D1965217EFFB /* Pods-HenriPotier.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -849,7 +865,7 @@
 		};
 		1E4614F9205275A000B03360 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A65A227FC798AF6ADA5A4CB3 /* Pods-HenriPotierTests.debug.xcconfig */;
+			baseConfigurationReference = 8505B33B651311A9F7CA263E /* Pods-HenriPotierTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -869,7 +885,7 @@
 		};
 		1E4614FA205275A000B03360 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23433FDF2DDBAB8727AF4E84 /* Pods-HenriPotierTests.release.xcconfig */;
+			baseConfigurationReference = 49264E76FE94511511DE9658 /* Pods-HenriPotierTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -888,7 +904,7 @@
 		};
 		1E4614FC205275A000B03360 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B16740483F73B4B88B7FDFB3 /* Pods-HenriPotierUITests.debug.xcconfig */;
+			baseConfigurationReference = B864AA22B1EDA3CC5DFCF2D3 /* Pods-HenriPotierUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -905,7 +921,7 @@
 		};
 		1E4614FD205275A000B03360 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2AE1DD1BDC42A1D18CF44306 /* Pods-HenriPotierUITests.release.xcconfig */;
+			baseConfigurationReference = F9455D0AA5763BB27A3ED8A4 /* Pods-HenriPotierUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

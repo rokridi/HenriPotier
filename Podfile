@@ -8,13 +8,14 @@ target 'HenriPotier' do
   # Pods for HenriPotier
   
   pod 'HenriPotierApiClient', :git => "https://github.com/rokridi/HenriPotierApiClient.git"
-
   pod 'SDWebImage', '~> 4.0'
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
   pod 'RxDataSources', '~> 3.0'
   pod 'ParallaxHeader', '~> 2.0.0'
-  pod 'RxAlertController'
+  pod 'ReachabilitySwift'
+  pod 'SwiftMessages'
+  pod 'DZNEmptyDataSet'
   pod "MIBadgeButton-Swift", :git => 'https://github.com/mustafaibrahim989/MIBadgeButton-Swift.git', :branch => 'master'
 
   target 'HenriPotierTests' do
