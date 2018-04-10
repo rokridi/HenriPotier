@@ -18,9 +18,14 @@ class CartViewController: UIViewController {
     @IBOutlet weak var finalPriceLabel: UILabel!
     @IBOutlet weak var payButton: UIButton!
     
+    struct HPCartViewModelInput: HPCartViewModelTypeInput  {
+        var bookDeleted: Driver<IndexPath>
+        //var cartValidated: PublishSubject<Void> {get set}
+    }
+    
     let disposeBag = DisposeBag()
     
-    var viewModel: HPBooksViewModelType!
+    var viewModel: HPCartViewModelType!
     
     @IBAction func validateAndPay(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
@@ -31,7 +36,7 @@ class CartViewController: UIViewController {
         
         self.title = "Cart"
         setupTableView()
-        setupPriceLabels()
+        setupViewModel()
     }
     
     func setupTableView() {
@@ -39,7 +44,8 @@ class CartViewController: UIViewController {
         tableView.register(UINib(nibName: "\(BookTableViewCell.self)", bundle: nil), forCellReuseIdentifier: "\(BookTableViewCell.self)")
         tableView.estimatedRowHeight = UITableViewAutomaticDimension
         
-        tableView.rx.itemSelected
+        tableView.rx
+            .itemSelected
             .asObservable()
             .subscribe(onNext:{ indexPath in
                 self.tableView.deselectRow(at: indexPath, animated: true)
@@ -47,6 +53,24 @@ class CartViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
-    func setupPriceLabels() {
+    private func setupViewModel() {
+        let deleteTrigger = tableView.rx.itemDeleted.asDriver(onErrorJustReturn: IndexPath(item: 0, section: 0))
+        
+        let input = HPCartViewModelInput(bookDeleted: deleteTrigger)
+        let output = viewModel.transform(input: input)
+        
+        output.books.asObservable().bind(to: tableView.rx.items) { (collectionView, row, bookVM ) in
+            let cell  = collectionView.dequeueReusableCell(withIdentifier: "\(BookTableViewCell.self)", for: IndexPath(row : row, section : 0)) as! BookTableViewCell
+            cell.bookVM = bookVM
+            return cell}
+            .disposed(by: disposeBag)
+        
+        output.cartIsEmpty
+            .drive(onNext: { self.navigationController?.popViewController(animated: true) })
+            .disposed(by: disposeBag)
+        
+        output.totalPrice.drive(self.priceLabel.rx.text).disposed(by: disposeBag)
+        
+        output.finalPrice.drive(self.finalPriceLabel.rx.text).disposed(by: disposeBag)
     }
 }

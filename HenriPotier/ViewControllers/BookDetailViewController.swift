@@ -22,16 +22,16 @@ class BookDetailViewController: UIViewController {
     @IBOutlet weak var synopsisLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    var imageView = UIImageView()
+    private var imageView = UIImageView()
     
-    var bookViewModel: HPBookViewModelType!
+    var bookVM: HPBookViewModelType!
     weak var delegate: BookDetailViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.titleLabel.text = bookViewModel.title
-        self.priceLabel.text = "\(bookViewModel.price) €"
-        self.synopsisLabel.text = bookViewModel.synopsis
+        self.titleLabel.text = bookVM.title
+        self.priceLabel.text = "\(bookVM.price) €"
+        self.synopsisLabel.text = bookVM.synopsis
         
         setupParallaxHeader()
     }
@@ -42,7 +42,7 @@ class BookDetailViewController: UIViewController {
 extension BookDetailViewController {
     
     @IBAction private func addToCart(_ sender: UIButton) {
-        delegate?.bookDetailViewController(self, didAddBookToCart: bookViewModel)
+        delegate?.bookDetailViewController(self, didAddBookToCart: bookVM)
         dismiss(animated: true, completion: nil)
     }
     
@@ -57,7 +57,7 @@ extension BookDetailViewController {
 extension BookDetailViewController {
     
     private func setupParallaxHeader() {
-        imageView.sd_setImage(with: URL(string: bookViewModel.cover), placeholderImage: nil) { (image, _, _, _) in
+        imageView.sd_setImage(with: URL(string: bookVM.cover), placeholderImage: nil) { (image, _, _, _) in
             
             DispatchQueue.main.async {
                 guard let image = image else {return}

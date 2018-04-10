@@ -12,19 +12,19 @@ import Foundation
 struct HPBookViewModel: HPBookViewModelType {
     
     /// ISBN of the book.
-    var isbn: String
+    var isbn: String = ""
     
     /// Title of the book.
-    var title: String
+    var title: String = ""
     
     /// Price of the book.
-    var price: Int
+    var price: Int = 0
     
     /// URL cover.
-    var cover: String
+    var cover: String = ""
     
     /// Synopsis of the book.
-    var synopsis: String
+    var synopsis: String = ""
     
     init() {
         isbn = ""

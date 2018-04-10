@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		180160FD7C927FE3FDA00E6E /* Pods_HenriPotier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DE2780D26C8021A1CE8BF95 /* Pods_HenriPotier.framework */; };
-		1E00EC3420738BE000741D7F /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E00EC3320738BE000741D7F /* CartViewModel.swift */; };
+		1E00EC3420738BE000741D7F /* HPCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E00EC3320738BE000741D7F /* HPCartViewModel.swift */; };
 		1E00EC3620738BEE00741D7F /* HPCartViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E00EC3520738BEE00741D7F /* HPCartViewModelType.swift */; };
 		1E00EC382073B85100741D7F /* HPBookCollectionViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E00EC372073B85100741D7F /* HPBookCollectionViewCellType.swift */; };
 		1E3F56EA20767543006AB03E /* Reachability+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F56E820767543006AB03E /* Reachability+Rx.swift */; };
@@ -62,7 +62,7 @@
 
 /* Begin PBXFileReference section */
 		0C45F2E8A79A71691764D05F /* Pods_HenriPotierTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HenriPotierTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1E00EC3320738BE000741D7F /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		1E00EC3320738BE000741D7F /* HPCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPCartViewModel.swift; sourceTree = "<group>"; };
 		1E00EC3520738BEE00741D7F /* HPCartViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPCartViewModelType.swift; sourceTree = "<group>"; };
 		1E00EC372073B85100741D7F /* HPBookCollectionViewCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPBookCollectionViewCellType.swift; sourceTree = "<group>"; };
 		1E3F56E820767543006AB03E /* Reachability+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reachability+Rx.swift"; sourceTree = "<group>"; };
@@ -252,7 +252,7 @@
 			children = (
 				1E4615312052E1C800B03360 /* HPBookViewModel.swift */,
 				F4B4078020557A7400D9974A /* HPBooksViewModel.swift */,
-				1E00EC3320738BE000741D7F /* CartViewModel.swift */,
+				1E00EC3320738BE000741D7F /* HPCartViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -659,7 +659,7 @@
 				1E3F56EB20767543006AB03E /* ObservableType+Reachability.swift in Sources */,
 				1E4615112052A0E500B03360 /* HPBookType.swift in Sources */,
 				1E4615132052A0FA00B03360 /* HPOfferType.swift in Sources */,
-				1E00EC3420738BE000741D7F /* CartViewModel.swift in Sources */,
+				1E00EC3420738BE000741D7F /* HPCartViewModel.swift in Sources */,
 				1E46150E2052841A00B03360 /* HPOffer.swift in Sources */,
 				1E591C58206E480100ADAB88 /* HPBooksViewModelType.swift in Sources */,
 				F496F4B4205EA86F003041B9 /* BookTableViewCell.swift in Sources */,

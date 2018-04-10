@@ -15,7 +15,15 @@ import SwiftMessages
 
 class BooksViewController: UIViewController {
     
+    struct HPBooksViewModelInput: HPBooksViewModelInputType {
+        var refreshBooks: Driver<Void>
+        var bookSelected: Driver<IndexPath>
+        var bookAdded: Driver<String>
+        var cartRequested: Driver<Void>
+    }
+    
     var viewModel: HPBooksViewModelType!
+    private var addedBookID = BehaviorRelay<String>(value: "")
     var error = ""
     
     let cartButton = MIBadgeButton(type: .custom)
@@ -34,24 +42,12 @@ class BooksViewController: UIViewController {
     }
 }
 
+//MARK: - ViewModel
+
 extension BooksViewController {
     
-    private func setupRefreshControl() {
-        collectionView.refreshControl = self.refreshControl
-    }
-    
-    private func setupCollectionView() {
-        collectionView.register(UINib(nibName: "\(BookCollectionViewCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(BookCollectionViewCell.self)")
-    }
-    
-    private func setupCartButton() {
-        cartButton.setImage(#imageLiteral(resourceName: "cart"), for: .normal)
-        cartButton.addTarget(self, action: #selector(BooksViewController.showCart), for: .touchUpInside)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: cartButton)
-        navigationItem.rightBarButtonItem?.isEnabled = false
-    }
-    
     private func setupViewModel() {
+        
         viewModel = HPBooksViewModel(client: HenriPotierApiClient(baseURL: "http://henri-potier.xebia.fr"))//http://henri-potier.xebia.fr
         
         let viewWillAppearTrigger = self.rx
@@ -66,12 +62,12 @@ extension BooksViewController {
         
         let refreshTrigger = Driver.merge(viewWillAppearTrigger, pullTrigger)
         
-        let input = HPBooksViewModel.HPBooksViewModelInput(refreshBooks: refreshTrigger, bookSelected: collectionView.rx.itemSelected.asDriver())
+        let input = HPBooksViewModelInput(refreshBooks: refreshTrigger, bookSelected: collectionView.rx.itemSelected.asDriver(), bookAdded: addedBookID.asDriver(), cartRequested: cartButton.rx.tap.asDriver())
         let output = viewModel.transform(input: input)
         
-        output.books.asObservable().bind(to: collectionView.rx.items) { (collectionView, row, element ) in
+        output.books.asObservable().bind(to: collectionView.rx.items) { (collectionView, row, bookVM ) in
             let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "\(BookCollectionViewCell.self)", for: IndexPath(row : row, section : 0)) as! BookCollectionViewCell
-            cell.bookViewModel = element
+            cell.bookVM = bookVM
             return cell
             }.disposed(by: disposeBag)
         
@@ -84,7 +80,10 @@ extension BooksViewController {
         }).disposed(by: disposeBag)
         
         output.selectedBook.drive(onNext: { bookVM in
-            print("selectedBook: \(bookVM)")
+            let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "\(BookDetailViewController.self)") as! BookDetailViewController
+            detailVC.bookVM = bookVM
+            detailVC.delegate = self
+            self.present(detailVC, animated: true, completion: nil)
         }).disposed(by: disposeBag)
         
         output.isConnected.drive(onNext: { _ in
@@ -94,12 +93,38 @@ extension BooksViewController {
         output.isDisconnected.drive(onNext: { _ in
             self.showInternetIsDownAlert()
         }).disposed(by: disposeBag)
+        
+        output.cart.drive(onNext: { cartVM in
+            let cartVC = self.storyboard?.instantiateViewController(withIdentifier: "\(CartViewController.self)") as! CartViewController
+            cartVC.viewModel = cartVM
+            self.navigationController?.pushViewController(cartVC, animated: true)
+        }).disposed(by: disposeBag)
+        
+        output.cartButtonEnabled.drive(cartButton.rx.isEnabled).disposed(by: disposeBag)
+        output.cartBooksCount.drive(onNext: { count in
+            self.cartButton.badgeString = count>0 ? String(count) : nil
+        }).disposed(by: disposeBag)
+    }
+}
+
+extension BooksViewController {
+    
+    private func setupRefreshControl() {
+        collectionView.refreshControl = self.refreshControl
     }
     
-    @objc private func showCart() {
-        let cartVC = storyboard?.instantiateViewController(withIdentifier: "\(CartViewController.self)") as! CartViewController
-        cartVC.viewModel = viewModel
-        navigationController?.pushViewController(cartVC, animated: true)
+    private func setupCollectionView() {
+        collectionView.register(UINib(nibName: "\(BookCollectionViewCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(BookCollectionViewCell.self)")
+    }
+    
+    private func bookAddedToCart(_ book: HPBookViewModelType) {
+        
+    }
+    
+    private func setupCartButton() {
+        cartButton.setImage(#imageLiteral(resourceName: "cart"), for: .normal)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: cartButton)
+        navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
     private func showError(_ message: String) {
@@ -170,5 +195,17 @@ extension BooksViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 8)
+    }
+}
+
+//MARK: - BookDetailViewControllerDelegate
+
+extension BooksViewController: BookDetailViewControllerDelegate {
+    
+    func bookDetailViewController(_ viewController: BookDetailViewController, didAddBookToCart book: HPBookViewModelType) {
+        addedBookID.accept(book.isbn)
+    }
+    
+    func bookDetailViewControllerDidDismiss(_ viewController: BookDetailViewController) {
     }
 }

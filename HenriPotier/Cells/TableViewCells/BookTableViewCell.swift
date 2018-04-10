@@ -10,7 +10,7 @@ import UIKit
 import SDWebImage
 
 protocol BookTableViewCellRepresentable {
-    var book: HPBookViewModelType! {get set}
+    var bookVM: HPBookViewModelType! {get set}
 }
 
 class BookTableViewCell: UITableViewCell, BookTableViewCellRepresentable {
@@ -19,11 +19,12 @@ class BookTableViewCell: UITableViewCell, BookTableViewCellRepresentable {
     @IBOutlet weak var bookImageView: UIImageView!
     @IBOutlet weak var bookTitleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    var book: HPBookViewModelType! {
+    
+    var bookVM: HPBookViewModelType! {
         didSet {
-            bookTitleLabel.text = book.title
-            priceLabel.text = "\(book.price) €"
-            bookImageView.sd_setImage(with: URL(string: book.cover))
+            bookTitleLabel.text = bookVM.title
+            priceLabel.text = "\(bookVM.price) €"
+            bookImageView.sd_setImage(with: URL(string: bookVM.cover))
         }
     }
     

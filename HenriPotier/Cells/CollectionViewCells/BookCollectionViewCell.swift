@@ -15,7 +15,7 @@ class BookCollectionViewCell: UICollectionViewCell, HPBookCollectionViewCellType
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
     
-    var bookViewModel: HPBookViewModelType! {
+    var bookVM: HPBookViewModelType! {
         didSet {
             refreshContent()
         }
@@ -28,8 +28,8 @@ class BookCollectionViewCell: UICollectionViewCell, HPBookCollectionViewCellType
 
 extension BookCollectionViewCell {
     private func refreshContent() {
-        titleLabel.text = bookViewModel.title
-        priceLabel.text = String(bookViewModel.price)
-        imageView.sd_setImage(with: URL(string: bookViewModel.cover), placeholderImage: nil)
+        titleLabel.text = bookVM.title
+        priceLabel.text = String(bookVM.price)
+        imageView.sd_setImage(with: URL(string: bookVM.cover), placeholderImage: nil)
     }
 }

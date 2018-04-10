@@ -14,18 +14,21 @@ import RxCocoa
 protocol HPBooksViewModelInputType {
     var refreshBooks: Driver<Void> {get set}
     var bookSelected: Driver<IndexPath> {get set}
+    var bookAdded: Driver<String> {get set}
+    var cartRequested: Driver<Void> {get set}
 }
 
 protocol HPBooksViewModelOutputType {
     var books: Driver<[HPBookViewModelType]> {get set}
     var selectedBook: Driver<HPBookViewModelType> {get set}
-    var cartBooksCount: Observable<Int> {get set}
-    var cartButtonEnabled: Observable<Bool> {get set}
+    var cartBooksCount: Driver<Int> {get set}
+    var cartButtonEnabled: Driver<Bool> {get set}
     var error: Driver<String> {get set}
     var isRefreshing: Driver<Bool> {get set}
     var isRetrying: Driver<Bool> {get set}
     var isConnected: Driver<Void> {get set}
     var isDisconnected: Driver<Void> {get set}
+    var cart: Driver<HPCartViewModel> {get set}
 }
 
 protocol HPBooksViewModelType {

@@ -9,5 +9,5 @@
 import UIKit
 
 protocol HPBookCollectionViewCellType {
-    var bookViewModel: HPBookViewModelType! {get set}
+    var bookVM: HPBookViewModelType! {get set}
 }
