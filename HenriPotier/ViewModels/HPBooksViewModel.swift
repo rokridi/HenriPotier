@@ -22,17 +22,19 @@ class HPBooksViewModel: HPBooksViewModelType {
         var error: Driver<String>
         var isRefreshing: Driver<Bool>
         var isRetrying: Driver<Bool>
-        var isConnected: Driver<Void>
-        var isDisconnected: Driver<Void>
+        var isReachable: Driver<Bool>
         var cart: Driver<HPCartViewModel>
     }
+    
+    private let reachability = Reachability()!
+    private var shouldNotifiyReachabilityStatus = BehaviorRelay<Bool>(value: false)
     
     private var cartBooks = Variable<[HPBookViewModelType]>([])
     private var error = PublishSubject<String>()
     private var isRefreshing = PublishSubject<Bool>()
     private var isRetrying = PublishSubject<Bool>()
+    private var isReachable = BehaviorRelay<Bool>(value: false)
     private let client: HTTPClient
-    let reachability = Reachability(hostname: "http://henri-potier.xebia.fr")!
     private let disposeBag = DisposeBag()
     private var disposable: Disposable!
         
@@ -45,23 +47,18 @@ class HPBooksViewModel: HPBooksViewModelType {
         
         let outputError = self.error.asDriver(onErrorJustReturn: "")
         
-        let booksObservable = self.client.fetchBooks().do(onNext: { books in
-            self.isRefreshing.onNext(false)
-        }, onError: { error in
-            self.isRefreshing.onNext(false)
-            self.error.onNext(error.localizedDescription)
-        }, onSubscribed: {
-            self.isRefreshing.onNext(true)
-        }).retryWhen({ (errorObservable: Observable<Error>) in
-            return errorObservable.enumerated().flatMap({ (attempt, error) -> Observable<Void> in
-                
-                guard attempt < 3 else {
-                    return Observable.error(error)
-                }
-                
+        let booksObservable = self.client.fetchBooks()
+            .do(onNext: { books in
+                self.isRefreshing.onNext(false)
+            }, onError: { error in
+                self.isRefreshing.onNext(false)
+                self.error.onNext(error.localizedDescription)
+            }, onSubscribed: {
+                self.isRefreshing.onNext(true)
+            })
+            .retryWhen({ _ in
                 return self.reachability.rx.isConnected
             })
-        })
         
         let outputBooks = input.refreshBooks.flatMapLatest { _ -> Driver<[HPBookViewModelType]> in
             return booksObservable.map({ books in return books.map({ return HPBookViewModel(book: $0) })}).asDriver(onErrorJustReturn: [])
@@ -102,8 +99,20 @@ class HPBooksViewModel: HPBooksViewModelType {
         let cartButtonEnabled = cartBooks.asDriver().map { $0.count > 0 }
         let isRefreshing = self.isRefreshing.asDriver(onErrorJustReturn: false)
         let isRetrying = self.isRetrying.asDriver(onErrorJustReturn: false)
-        let isConnected = reachability.rx.isConnected.asDriver(onErrorJustReturn: ())
-        let isDisconnected = reachability.rx.isDisconnected.asDriver(onErrorJustReturn: ())
+
+        reachability.rx.isReachable.asDriver(onErrorJustReturn: false).drive(onNext: { [weak self] reachable in
+            
+            guard let `self` = self else { return }
+            
+            if reachable, !self.shouldNotifiyReachabilityStatus.value {
+                self.shouldNotifiyReachabilityStatus.accept(true)
+                return
+            }
+            
+            self.shouldNotifiyReachabilityStatus.accept(true)
+            self.isReachable.accept(reachable)
+            
+        }).disposed(by: disposeBag)
         
         return HPBooksViewModelOutput(books: outputBooks,
                                       selectedBook: selectedBook,
@@ -112,7 +121,7 @@ class HPBooksViewModel: HPBooksViewModelType {
                                       error: outputError,
                                       isRefreshing: isRefreshing,
                                       isRetrying: isRetrying,
-                                      isConnected: isConnected,
-                                      isDisconnected: isDisconnected, cart: cart)
+                                      isReachable: self.isReachable.asDriver(onErrorJustReturn: false).skip(1),
+                                      cart: cart)
     }
 }

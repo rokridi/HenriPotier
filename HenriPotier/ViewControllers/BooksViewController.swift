@@ -23,11 +23,22 @@ class BooksViewController: UIViewController {
     }
     
     var viewModel: HPBooksViewModelType!
-    private var addedBookID = BehaviorRelay<String>(value: "")
-    var error = ""
     
-    let cartButton = MIBadgeButton(type: .custom)
+    private var errorMessages: SwiftMessages = {
+        
+        var config = SwiftMessages.Config()
+        config.presentationStyle = .top
+        config.duration = .automatic
+        
+        let messages = SwiftMessages()
+        messages.defaultConfig = config
+        
+        return messages
+    }()
+    
+    private var addedBookID = BehaviorRelay<String>(value: "")
     private let disposeBag = DisposeBag()
+    private let cartButton = MIBadgeButton(type: .custom)
     private var refreshControl = UIRefreshControl()
     @IBOutlet private weak var collectionView: UICollectionView!
     
@@ -86,12 +97,12 @@ extension BooksViewController {
             self.present(detailVC, animated: true, completion: nil)
         }).disposed(by: disposeBag)
         
-        output.isConnected.drive(onNext: { _ in
-            self.showInternetIsBackAlert()
-        }).disposed(by: disposeBag)
-        
-        output.isDisconnected.drive(onNext: { _ in
-            self.showInternetIsDownAlert()
+        output.isReachable.drive(onNext: { [weak self] isReachable in
+            if isReachable {
+                self?.showInternetIsBackAlert()
+            } else {
+                self?.showInternetIsDownAlert()
+            }
         }).disposed(by: disposeBag)
         
         output.cart.drive(onNext: { cartVM in
@@ -128,16 +139,12 @@ extension BooksViewController {
     }
     
     private func showError(_ message: String) {
-        var config = SwiftMessages.Config()
-        config.presentationStyle = .top
-        config.duration = .automatic
-        config.ignoreDuplicates = false
         
         let messageView = MessageView.viewFromNib(layout: .messageView)
         messageView.configureTheme(.error)
         messageView.configureContent(title: "", body: message)
         messageView.button?.isHidden = true
-        SwiftMessages.show(config: config, view: messageView)
+        errorMessages.show(view: messageView)
     }
     
     private func showWarning(_ message: String) {
@@ -152,23 +159,29 @@ extension BooksViewController {
     private func showInternetIsDownAlert() {
         var config = SwiftMessages.Config()
         config.presentationStyle = .bottom
-        config.duration = .automatic
-        config.ignoreDuplicates = false
+        config.duration = .forever
+        config.interactiveHide = false
+        config.ignoreDuplicates = true
+        
         let messageView = MessageView.viewFromNib(layout: .statusLine)
         messageView.configureTheme(.info)
         messageView.configureContent(title: "", body: "Internet is down !")
+        messageView.id = "down"
         SwiftMessages.show(config: config, view: messageView)
     }
     
     private func showInternetIsBackAlert() {
+        
         var config = SwiftMessages.Config()
         config.presentationStyle = .bottom
         config.duration = .automatic
-        config.ignoreDuplicates = false
+        config.interactiveHide = false
         
         let messageView = MessageView.viewFromNib(layout: .statusLine)
         messageView.configureTheme(.info)
         messageView.configureContent(title: "", body: "Internet is back !")
+        messageView.id = "back"
+        SwiftMessages.hide(id: "down")
         SwiftMessages.show(config: config, view: messageView)
     }
     

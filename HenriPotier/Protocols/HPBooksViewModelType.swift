@@ -26,8 +26,7 @@ protocol HPBooksViewModelOutputType {
     var error: Driver<String> {get set}
     var isRefreshing: Driver<Bool> {get set}
     var isRetrying: Driver<Bool> {get set}
-    var isConnected: Driver<Void> {get set}
-    var isDisconnected: Driver<Void> {get set}
+    var isReachable: Driver<Bool> {get set}
     var cart: Driver<HPCartViewModel> {get set}
 }
 
