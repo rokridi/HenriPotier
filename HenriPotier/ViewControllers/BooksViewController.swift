@@ -59,7 +59,7 @@ extension BooksViewController {
     
     private func setupViewModel() {
         
-        viewModel = HPBooksViewModel(client: HenriPotierApiClient(baseURL: "http://henri-potier.xebia.fr"))//http://henri-potier.xebia.fr
+        viewModel = HPBooksViewModel(client: HenriPotierApiClient(baseURL: "http://henri-potier.xebia.fr"))
         
         let viewWillAppearTrigger = self.rx
             .sentMessage(#selector(UIViewController.viewWillAppear(_:)))
